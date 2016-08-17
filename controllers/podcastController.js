@@ -36,7 +36,7 @@ module.exports = (app) =>{
 
 				 	var episodio = new Episodio({
 				 		nome:    article.title, 
-				 		vitrine: article.image.url || "nada" , 
+				 		vitrine: article.image.url || article.meta.image.url, 
 				 		midia:   article.enclosures[0].url
 				 	}); 
 
