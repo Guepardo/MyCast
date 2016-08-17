@@ -1,13 +1,15 @@
-var express 	= require("express"); 
-var load    	= require("express-load"); 
-var path 		= require('path'); 
-var session 	= require('express-session'); 
-var bodyParser  = require('body-parser'); 
-var http        = require('http'); 
-var app 		= express(); 
+var express 	     = require("express"); 
+var load    	     = require("express-load"); 
+var path 		     = require('path'); 
+var session 	     = require('express-session'); 
+var bodyParser       = require('body-parser'); 
+var expressValidator = require('express-validator'); 
+var http             = require('http'); 
+var app 		     = express(); 
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(expressValidator()); 
 app.use(session({secret : 'sometext', resave: true, saveUninitialized: true}));
 
 app.use(express.static(path.join(__dirname, '/public')));

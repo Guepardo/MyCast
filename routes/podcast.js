@@ -1,3 +1,4 @@
 module.exports = (app) =>{
-	app.get('/novo', app.controllers.podcastController.novo); 
+	app.post('/api/pod/getAll', app.controllers.podcastController.getAll); 
+	app.post('/api/pod/new', app.controllers.podcastController.new); 
 }; 
