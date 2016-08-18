@@ -1,7 +1,6 @@
 var feedParser = require('ortoo-feedparser'); 
 
 module.exports = (app) =>{
-
 	var Podcast  = app.models.podcastModel; 
 	var Episodio = app.models.episodioModel; 
 	
@@ -33,11 +32,11 @@ module.exports = (app) =>{
 
 				feedParser.parseFile(pod.url). 
 				on('article', function (article){
-
 				 	var episodio = new Episodio({
 				 		nome:    article.title, 
 				 		vitrine: article.image.url || article.meta.image.url, 
-				 		midia:   article.enclosures[0].url
+				 		midia:   article.enclosures[0].url, 
+				 		views: Math.floor((Math.random() * 100000) + 1)
 				 	}); 
 
 				 	episodio.save((error, ep) =>{
