@@ -488,6 +488,56 @@
               
                 <!-- CONTEINER 1 -->
                 <section class="scrollable padder-lg w-f-md" id="bjax-target">
+
+                 <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin" ><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
+                  <h2 class="font-thin m-b">Lançamentos<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
+                    <span class="bar1 a1 bg-primary lter"></span>
+                    <span class="bar2 a2 bg-info lt"></span>
+                    <span class="bar3 a3 bg-success"></span>
+                    <span class="bar4 a4 bg-warning dk"></span>
+                    <span class="bar5 a5 bg-danger dker"></span>
+                  </span></h2>
+                  <div class="row row-sm"  >
+
+
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="ep in epRecente">
+                      <div class="item">
+                        <div class="pos-rlt">
+                          <div class="bottom">
+                            <!-- <span class="badge bg-info m-l-sm m-b-sm">03:20</span> -->
+                          </div>
+                          <div class="item-overlay opacity r r-2x bg-black">
+                            <div class="text-info padder m-t-sm text-sm">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star-o text-muted"></i>
+                            </div>
+                            <div class="center text-center m-t-n">
+                              <a v-on:click="play($index,'Recent')"><i class="icon-control-play i-2x"></i></a>
+                            </div>
+                            <div class="bottom padder m-b-sm">
+                              <a href="#" class="pull-right">
+                                <i class="fa fa-heart-o"></i>
+                              </a>
+                              <a href="#">
+                                <i class="fa fa-plus-circle"></i>
+                              </a>
+                            </div>
+                          </div>
+                          <a >
+                          <img v-bind:src="ep.vitrine" alt="{{ep.nome}}" class="r r-2x img-full">
+                          </a>
+                        </div>
+                        <div class="padder-v">
+                          <a href="#" class="text-ellipsis">{{ep.nome}}</a>
+                          <a href="#" class="text-ellipsis text-xs text-muted">{{ep.views | locale }} views</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   
                   <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin" ><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
                   <h2 class="font-thin m-b">Mais Ouvidos<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
@@ -527,17 +577,18 @@
                             </div>
                           </div>
                           <a >
-                          <img src="{{ ep.vitrine }}" alt="{{ep.nome}}" class="r r-2x img-full">
+                          <img v-bind:src="ep.vitrine" alt="{{ep.nome}}" class="r r-2x img-full">
                           </a>
                         </div>
                         <div class="padder-v">
                           <a href="#" class="text-ellipsis">{{ep.nome}}</a>
-                          <a href="#" class="text-ellipsis text-xs text-muted">Views: {{ep.views}}</a>
+                          <a href="#" class="text-ellipsis text-xs text-muted">{{ep.views | locale }} views</a>
                         </div>
                       </div>
                     </div>
                   </div>
 
+                  
 
                   <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin" ><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
                   <h2 class="font-thin m-b">Menos Ouvidos<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
@@ -577,12 +628,12 @@
                             </div>
                           </div>
                           <a >
-                          <img src="{{ ep.vitrine }}" alt="{{ep.nome}}" class="r r-2x img-full">
+                          <img v-bind:src="ep.vitrine" alt="{{ep.nome}}" class="r r-2x img-full">
                           </a>
                         </div>
                         <div class="padder-v">
                           <a href="#" class="text-ellipsis">{{ep.nome}}</a>
-                          <a href="#" class="text-ellipsis text-xs text-muted">Views: {{ep.views}}</a>
+                          <a href="#" class="text-ellipsis text-xs text-muted">{{ep.views | locale }} views</a>
                         </div>
                       </div>
                     </div>
@@ -830,7 +881,8 @@
       
       data:{
           epMais: [],
-          epMenos: []
+          epMenos: [], 
+          epRecente:[]
       }, 
 
       ready: function(){
@@ -844,6 +896,11 @@
         done(function(data){
           self.$set('epMenos', data.msg); 
         }); 
+
+        $.post('/api/epi/getListRecent').
+        done(function(data){
+          self.$set('epRecente', data.msg); 
+        }); 
       }, 
 
       methods:{
@@ -852,8 +909,10 @@
           var ep; 
           if(what == 'Lower') 
              ep = this.epMenos[index]; 
-          else
+          else if( what == 'Most')
              ep = this.epMais[index]; 
+           else
+             ep = this.epRecente[index]; 
 
           $('#jplayer_N').jPlayer("setMedia", {
             mp3: ep.midia, 
@@ -874,7 +933,13 @@
         }
       }
 
-    })
+    }); 
+
+    Vue.filter('locale', function(num){
+      var num = new Number(num); 
+      return num.toLocaleString(); 
+    }); 
+
   </script>
 </body>
 </html>

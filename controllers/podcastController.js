@@ -36,7 +36,8 @@ module.exports = (app) =>{
 				 		nome:    article.title, 
 				 		vitrine: article.image.url || article.meta.image.url, 
 				 		midia:   article.enclosures[0].url, 
-				 		views: Math.floor((Math.random() * 100000) + 1)
+				 		views: Math.floor((Math.random() * 100000) + 1), 
+				 		dataPub: article.pubdate
 				 	}); 
 
 				 	episodio.save((error, ep) =>{

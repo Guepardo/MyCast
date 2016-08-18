@@ -5,7 +5,8 @@ module.exports = (app) => {
 		nome:    {type: String, required: true, unique: true }, 
 		vitrine: {type: String, required: true }, 
 		midia:   {type: String, required: true, unique: true }, 
-		views:   {type: Number, default: 0}
+		views:   {type: Number, default: 0}, 
+		dataPub: {type: Date, required: true}
 	}); 
 
 	return mongoose.model('Episodio', schema); 

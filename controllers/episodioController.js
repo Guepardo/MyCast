@@ -110,7 +110,22 @@ module.exports = (app) =>{
 
 				res.json({status: true, msg: list}); 
 			}); 
-		}
+		}, 
+
+		getListRecent: (req, res, next) =>{
+			Episodio.find(). 
+			sort({dataPub: -1}). 
+			limit(12). 
+			exec((error, list) =>{
+				if(error){
+					res.json({status: false, msg: error.errmsg}); 
+					return;		
+				}
+
+				res.json({status: true, msg: list}); 
+			}); 
+		}, 
+
 	}; 
 
 	return controller; 
