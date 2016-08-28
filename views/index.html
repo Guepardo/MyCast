@@ -16,24 +16,24 @@
     <script src="js/ie/html5shiv.js"></script>
     <script src="js/ie/respond.min.js"></script>
     <script src="js/ie/excanvas.js"></script>
-  <![endif]-->
-</head>
-<body class="">
-  <section class="vbox">
-    <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
-      <div class="navbar-header aside bg-info nav-xs">
-        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
-          <i class="icon-list"></i>
-        </a>
-        <a href="index.html" class="navbar-brand text-lt">
-          <i class="icon-earphones"></i>
-          <img src="images/logo.png" alt="." class="hide">
-          <span class="hidden-nav-xs m-l-sm">Musik</span>
-        </a>
-        <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
-          <i class="icon-settings"></i>
-        </a>
-      </div>      <ul class="nav navbar-nav hidden-xs">
+    <![endif]-->
+  </head>
+  <body class="">
+    <section class="vbox">
+      <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
+        <div class="navbar-header aside bg-info nav-xs">
+          <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+            <i class="icon-list"></i>
+          </a>
+          <a href="/index" class="navbar-brand text-lt">
+            <i class="icon-earphones"></i>
+            <img src="images/logo.png" alt="." class="hide">
+            <span class="hidden-nav-xs m-l-sm">Musik</span>
+          </a>
+          <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
+            <i class="icon-settings"></i>
+          </a>
+        </div>      <ul class="nav navbar-nav hidden-xs">
         <li>
           <a href="#nav,.navbar-header" data-toggle="class:nav-xs,nav-xs" class="text-muted">
             <i class="fa fa-indent text"></i>
@@ -127,7 +127,7 @@
           <section class="vbox">
             <section class="w-f-md scrollable">
               <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
-                
+
 
 
                 <!-- nav -->                 
@@ -137,13 +137,13 @@
                       Discover
                     </li>
                     <li>
-                      <a href="index.html">
+                      <a v-link="{path : '/'}">
                         <i class="icon-disc icon text-success"></i>
                         <span class="font-bold">What's new</span>
                       </a>
                     </li>
                     <li>
-                      <a href="genres.html">
+                      <a v-link="{path : '/genero'}">
                         <i class="icon-music-tone-alt icon text-info"></i>
                         <span class="font-bold">Genres</span>
                       </a>
@@ -437,209 +437,57 @@
             
             <footer class="footer hidden-xs no-padder text-center-nav-xs">
               <div class="bg hidden-xs ">
-                  <div class="dropdown dropup wrapper-sm clearfix">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <span class="thumb-sm avatar pull-left m-l-xs">                        
-                        <img src="images/a3.png" class="dker" alt="...">
-                        <i class="on b-black"></i>
+                <div class="dropdown dropup wrapper-sm clearfix">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="thumb-sm avatar pull-left m-l-xs">                        
+                      <img src="images/a3.png" class="dker" alt="...">
+                      <i class="on b-black"></i>
+                    </span>
+                    <span class="hidden-nav-xs clear">
+                      <span class="block m-l">
+                        <strong class="font-bold text-lt">John.Smith</strong> 
+                        <b class="caret"></b>
                       </span>
-                      <span class="hidden-nav-xs clear">
-                        <span class="block m-l">
-                          <strong class="font-bold text-lt">John.Smith</strong> 
-                          <b class="caret"></b>
-                        </span>
-                        <span class="text-muted text-xs block m-l">Art Director</span>
-                      </span>
-                    </a>
-                    <ul class="dropdown-menu animated fadeInRight aside text-left">                      
-                      <li>
-                        <span class="arrow bottom hidden-nav-xs"></span>
-                        <a href="#">Settings</a>
-                      </li>
-                      <li>
-                        <a href="profile.html">Profile</a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <span class="badge bg-danger pull-right">3</span>
-                          Notifications
-                        </a>
-                      </li>
-                      <li>
-                        <a href="docs.html">Help</a>
-                      </li>
-                      <li class="divider"></li>
-                      <li>
-                        <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>           
-             </footer>
+                      <span class="text-muted text-xs block m-l">Art Director</span>
+                    </span>
+                  </a>
+                  <ul class="dropdown-menu animated fadeInRight aside text-left">                      
+                    <li>
+                      <span class="arrow bottom hidden-nav-xs"></span>
+                      <a href="#">Settings</a>
+                    </li>
+                    <li>
+                      <a href="profile.html">Profile</a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <span class="badge bg-danger pull-right">3</span>
+                        Notifications
+                      </a>
+                    </li>
+                    <li>
+                      <a href="docs.html">Help</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>           
+            </footer>
           </section>
         </aside>
         <!-- /.aside -->
         <section id="content">
           <section class="hbox stretch">
             <section>
-             
+
 
               <section class="vbox" id="body">
-              
+
                 <!-- CONTEINER 1 -->
-                <section class="scrollable padder-lg w-f-md" id="bjax-target">
-
-                 <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin" ><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
-                  <h2 class="font-thin m-b">Lançamentos<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
-                    <span class="bar1 a1 bg-primary lter"></span>
-                    <span class="bar2 a2 bg-info lt"></span>
-                    <span class="bar3 a3 bg-success"></span>
-                    <span class="bar4 a4 bg-warning dk"></span>
-                    <span class="bar5 a5 bg-danger dker"></span>
-                  </span></h2>
-                  <div class="row row-sm"  >
-
-
-                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="ep in epRecente">
-                      <div class="item">
-                        <div class="pos-rlt">
-                          <div class="bottom">
-                            <!-- <span class="badge bg-info m-l-sm m-b-sm">03:20</span> -->
-                          </div>
-                          <div class="item-overlay opacity r r-2x bg-black">
-                            <div class="text-info padder m-t-sm text-sm">
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star-o text-muted"></i>
-                            </div>
-                            <div class="center text-center m-t-n">
-                              <a v-on:click="play($index,'Recent')"><i class="icon-control-play i-2x"></i></a>
-                            </div>
-                            <div class="bottom padder m-b-sm">
-                              <a href="#" class="pull-right">
-                                <i class="fa fa-heart-o"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-plus-circle"></i>
-                              </a>
-                            </div>
-                          </div>
-                          <a >
-                          <img v-bind:src="ep.vitrine" alt="{{ep.nome}}" class="r r-2x img-full">
-                          </a>
-                        </div>
-                        <div class="padder-v">
-                          <a href="#" class="text-ellipsis">{{ep.nome}}</a>
-                          <a href="#" class="text-ellipsis text-xs text-muted">{{ep.views | locale }} views</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  
-                  <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin" ><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
-                  <h2 class="font-thin m-b">Mais Ouvidos<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
-                    <span class="bar1 a1 bg-primary lter"></span>
-                    <span class="bar2 a2 bg-info lt"></span>
-                    <span class="bar3 a3 bg-success"></span>
-                    <span class="bar4 a4 bg-warning dk"></span>
-                    <span class="bar5 a5 bg-danger dker"></span>
-                  </span></h2>
-                  <div class="row row-sm"  >
-
-
-                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="ep in epMais">
-                      <div class="item">
-                        <div class="pos-rlt">
-                          <div class="bottom">
-                            <!-- <span class="badge bg-info m-l-sm m-b-sm">03:20</span> -->
-                          </div>
-                          <div class="item-overlay opacity r r-2x bg-black">
-                            <div class="text-info padder m-t-sm text-sm">
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star-o text-muted"></i>
-                            </div>
-                            <div class="center text-center m-t-n">
-                              <a v-on:click="play($index, 'Most')"><i class="icon-control-play i-2x"></i></a>
-                            </div>
-                            <div class="bottom padder m-b-sm">
-                              <a href="#" class="pull-right">
-                                <i class="fa fa-heart-o"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-plus-circle"></i>
-                              </a>
-                            </div>
-                          </div>
-                          <a >
-                          <img v-bind:src="ep.vitrine" alt="{{ep.nome}}" class="r r-2x img-full">
-                          </a>
-                        </div>
-                        <div class="padder-v">
-                          <a href="#" class="text-ellipsis">{{ep.nome}}</a>
-                          <a href="#" class="text-ellipsis text-xs text-muted">{{ep.views | locale }} views</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  
-
-                  <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin" ><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
-                  <h2 class="font-thin m-b">Menos Ouvidos<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
-                    <span class="bar1 a1 bg-primary lter"></span>
-                    <span class="bar2 a2 bg-info lt"></span>
-                    <span class="bar3 a3 bg-success"></span>
-                    <span class="bar4 a4 bg-warning dk"></span>
-                    <span class="bar5 a5 bg-danger dker"></span>
-                  </span></h2>
-                  <div class="row row-sm"  >
-
-
-                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="ep in epMenos">
-                      <div class="item">
-                        <div class="pos-rlt">
-                          <div class="bottom">
-                            <!-- <span class="badge bg-info m-l-sm m-b-sm">03:20</span> -->
-                          </div>
-                          <div class="item-overlay opacity r r-2x bg-black">
-                            <div class="text-info padder m-t-sm text-sm">
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star-o text-muted"></i>
-                            </div>
-                            <div class="center text-center m-t-n">
-                              <a v-on:click="play($index,'Lower')"><i class="icon-control-play i-2x"></i></a>
-                            </div>
-                            <div class="bottom padder m-b-sm">
-                              <a href="#" class="pull-right">
-                                <i class="fa fa-heart-o"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-plus-circle"></i>
-                              </a>
-                            </div>
-                          </div>
-                          <a >
-                          <img v-bind:src="ep.vitrine" alt="{{ep.nome}}" class="r r-2x img-full">
-                          </a>
-                        </div>
-                        <div class="padder-v">
-                          <a href="#" class="text-ellipsis">{{ep.nome}}</a>
-                          <a href="#" class="text-ellipsis text-xs text-muted">{{ep.views | locale }} views</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </section>
+                <router-view> </router-view>
                 <!-- CONTEINER 1 FIM -->
                 
                 <footer class="footer bg-dark">
@@ -863,83 +711,263 @@
       </section>
     </section>    
   </section>
-  <script src="js/jquery.min.js"></script>
-  <!-- Bootstrap -->
-  <script src="js/bootstrap.js"></script>
-  <!-- App -->
-  <script src="js/app.js"></script>  
-  <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="js/app.plugin.js"></script>
-  <script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
-  <script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
-  <script type="text/javascript" src="js/jPlayer/demo.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
 
-  <script type="text/javascript">
-    new Vue({
-      el: '#body', 
-      
-      data:{
-          epMais: [],
-          epMenos: [], 
-          epRecente:[]
-      }, 
+  <!-- MAIN TEMPLATE -->
+  <script type="text/template" id="main-template">
+   <section class="scrollable padder-lg w-f-md" id="bjax-target">
 
-      ready: function(){
-        var self = this; 
-        $.post('/api/epi/getListMostViewed').
-        done(function(data){
-          self.$set('epMais', data.msg); 
-        }); 
+     <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin" ><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
+     <h2 class="font-thin m-b">Lançamentos<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
+      <span class="bar1 a1 bg-primary lter"></span>
+      <span class="bar2 a2 bg-info lt"></span>
+      <span class="bar3 a3 bg-success"></span>
+      <span class="bar4 a4 bg-warning dk"></span>
+      <span class="bar5 a5 bg-danger dker"></span>
+    </span></h2>
+    <div class="row row-sm"  >
 
-        $.post('/api/epi/getListLowerViewed').
-        done(function(data){
-          self.$set('epMenos', data.msg); 
-        }); 
 
-        $.post('/api/epi/getListRecent').
-        done(function(data){
-          self.$set('epRecente', data.msg); 
-        }); 
-      }, 
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="ep in epRecente">
+        <div class="item">
+          <div class="pos-rlt">
+            <div class="bottom">
+              <!-- <span class="badge bg-info m-l-sm m-b-sm">03:20</span> -->
+            </div>
+            <div class="item-overlay opacity r r-2x bg-black">
+              <div class="text-info padder m-t-sm text-sm">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o text-muted"></i>
+              </div>
+              <div class="center text-center m-t-n">
+                <a v-on:click="play($index,'Recent')"><i class="icon-control-play i-2x"></i></a>
+              </div>
+              <div class="bottom padder m-b-sm">
+                <a href="#" class="pull-right">
+                  <i class="fa fa-heart-o"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-plus-circle"></i>
+                </a>
+              </div>
+            </div>
+            <a >
+              <img v-bind:src="ep.vitrine" alt="{{ep.nome}}" class="r r-2x img-full">
+            </a>
+          </div>
+          <div class="padder-v">
+            <a href="#" class="text-ellipsis">{{ep.nome}}</a>
+            <a href="#" class="text-ellipsis text-xs text-muted">{{ep.views | locale }} views</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      methods:{
-        play: function(index, what){
+    <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin" ><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
+    <h2 class="font-thin m-b">Mais Ouvidos<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
+      <span class="bar1 a1 bg-primary lter"></span>
+      <span class="bar2 a2 bg-info lt"></span>
+      <span class="bar3 a3 bg-success"></span>
+      <span class="bar4 a4 bg-warning dk"></span>
+      <span class="bar5 a5 bg-danger dker"></span>
+    </span></h2>
+    <div class="row row-sm"  >
 
-          var ep; 
-          if(what == 'Lower') 
-             ep = this.epMenos[index]; 
-          else if( what == 'Most')
-             ep = this.epMais[index]; 
-           else
-             ep = this.epRecente[index]; 
 
-          $('#jplayer_N').jPlayer("setMedia", {
-            mp3: ep.midia, 
-            title: ep.nome
-          }).jPlayer('play'); 
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="ep in epMais">
+        <div class="item">
+          <div class="pos-rlt">
+            <div class="bottom">
+              <!-- <span class="badge bg-info m-l-sm m-b-sm">03:20</span> -->
+            </div>
+            <div class="item-overlay opacity r r-2x bg-black">
+              <div class="text-info padder m-t-sm text-sm">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o text-muted"></i>
+              </div>
+              <div class="center text-center m-t-n">
+                <a v-on:click="play($index, 'Most')"><i class="icon-control-play i-2x"></i></a>
+              </div>
+              <div class="bottom padder m-b-sm">
+                <a href="#" class="pull-right">
+                  <i class="fa fa-heart-o"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-plus-circle"></i>
+                </a>
+              </div>
+            </div>
+            <a >
+              <img v-bind:src="ep.vitrine" alt="{{ep.nome}}" class="r r-2x img-full">
+            </a>
+          </div>
+          <div class="padder-v">
+            <a href="#" class="text-ellipsis">{{ep.nome}}</a>
+            <a href="#" class="text-ellipsis text-xs text-muted">{{ep.views | locale }} views</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-          this.view(ep); 
-        }, 
 
-        view: function(ep){
 
-          ep.views++; 
+    <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin" ><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
+    <h2 class="font-thin m-b">Menos Ouvidos<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
+      <span class="bar1 a1 bg-primary lter"></span>
+      <span class="bar2 a2 bg-info lt"></span>
+      <span class="bar3 a3 bg-success"></span>
+      <span class="bar4 a4 bg-warning dk"></span>
+      <span class="bar5 a5 bg-danger dker"></span>
+    </span></h2>
+    <div class="row row-sm"  >
 
-          $.post('/api/epi/view', {id: ep._id}). 
-          done(function(done){
-            console.log(done); 
-          }); 
-        }
-      }
 
-    }); 
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="ep in epMenos">
+        <div class="item">
+          <div class="pos-rlt">
+            <div class="bottom">
+              <!-- <span class="badge bg-info m-l-sm m-b-sm">03:20</span> -->
+            </div>
+            <div class="item-overlay opacity r r-2x bg-black">
+              <div class="text-info padder m-t-sm text-sm">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o text-muted"></i>
+              </div>
+              <div class="center text-center m-t-n">
+                <a v-on:click="play($index,'Lower')"><i class="icon-control-play i-2x"></i></a>
+              </div>
+              <div class="bottom padder m-b-sm">
+                <a href="#" class="pull-right">
+                  <i class="fa fa-heart-o"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-plus-circle"></i>
+                </a>
+              </div>
+            </div>
+            <a >
+              <img v-bind:src="ep.vitrine" alt="{{ep.nome}}" class="r r-2x img-full">
+            </a>
+          </div>
+          <div class="padder-v">
+            <a href="#" class="text-ellipsis">{{ep.nome}}</a>
+            <a href="#" class="text-ellipsis text-xs text-muted">{{ep.views | locale }} views</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</script>
 
-    Vue.filter('locale', function(num){
-      var num = new Number(num); 
-      return num.toLocaleString(); 
-    }); 
+<script src="js/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="js/bootstrap.js"></script>
+<!-- App -->
+<script src="js/app.js"></script>  
+<script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/app.plugin.js"></script>
+<script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
+<script type="text/javascript" src="js/jPlayer/demo.js"></script>
 
-  </script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/0.7.13/vue-router.js"></script>
+
+<script type="text/javascript">
+  var main = Vue.component('main',{
+    template: '#main-template', 
+
+    data: function(){
+      return {
+        epMais: [],
+        epMenos: [], 
+        epRecente:[]
+      }; 
+    }, 
+
+    ready: function(){
+      var self = this; 
+      $.post('/api/epi/getListMostViewed').
+      done(function(data){
+        self.$set('epMais', data.msg); 
+      }); 
+
+      $.post('/api/epi/getListLowerViewed').
+      done(function(data){
+        self.$set('epMenos', data.msg); 
+      }); 
+
+      $.post('/api/epi/getListRecent').
+      done(function(data){
+        self.$set('epRecente', data.msg); 
+      }); 
+    }, 
+
+    methods:{
+      play: function(index, what){
+
+        var ep; 
+        if(what == 'Lower') 
+         ep = this.epMenos[index]; 
+       else if( what == 'Most')
+         ep = this.epMais[index]; 
+       else
+         ep = this.epRecente[index]; 
+
+       $('#jplayer_N').jPlayer("setMedia", {
+        mp3: ep.midia, 
+        title: ep.nome
+      }).jPlayer('play'); 
+
+       this.view(ep); 
+     }, 
+
+     view: function(ep){
+
+      ep.views++; 
+
+      $.post('/api/epi/view', {id: ep._id}). 
+      done(function(done){
+        console.log(done); 
+      }); 
+    }
+  }
+}); 
+
+  var App = Vue.extend({});
+
+  var router = new VueRouter(); 
+
+
+  router.map({
+    '/':{
+      component: main
+    }, 
+    '/genero': {
+      component: { template: "<h1>Olá mundo da SPA</h1>"}
+    }
+  }); 
+
+  router.start(App, 'body'); 
+
+</script>
+
+<script type="text/javascript">
+
+
+  Vue.filter('locale', function(num){
+    var num = new Number(num); 
+    return num.toLocaleString(); 
+  }); 
+
+</script>
 </body>
 </html>
