@@ -1,17 +1,24 @@
+var fs = require("fs")
+var browserify = require('browserify')
+var vueify = require('vueify')
 var gulp   = require('gulp'); 
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify'); 
 
-gulp.task('scripts', function() {
-	gulp.src(['./public/js/components/*.js'])
-	.pipe(concat('components.min.js'))
-	.pipe(uglify())
-	.pipe(gulp.dest('./public/js/'))
-});
+// apply custom config
+vueify.compiler.applyConfig({
+  // ...same as in vue.config.js
+})
 
 
-gulp.task('watch', function(){
-	gulp.watch('./public/js/components/*.js', ['scripts']); 
+gulp.task('script', function(){
+	browserify('./views/main.js')
+	.transform(vueify)
+	.bundle()
+	.pipe(fs.createWriteStream("./public/js/bundle.js")); 
 }); 
 
-gulp.task('default', ['watch', 'scripts'] ); 
+gulp.task('watch', function(){
+	gulp.watch('./views/*', ['script']); 
+	gulp.watch('./views/components/*', ['script']); 
+}); 
+
+gulp.task('default', ['watch', 'script']); 
