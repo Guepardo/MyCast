@@ -712,159 +712,202 @@
     </section>    
   </section>
 
-  <!-- MAIN TEMPLATE -->
-  <script type="text/template" id="main-template">
-   <section class="scrollable padder-lg w-f-md" id="bjax-target">
-
-     <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin" ><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
-     <h2 class="font-thin m-b">Lançamentos<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
-      <span class="bar1 a1 bg-primary lter"></span>
-      <span class="bar2 a2 bg-info lt"></span>
-      <span class="bar3 a3 bg-success"></span>
-      <span class="bar4 a4 bg-warning dk"></span>
-      <span class="bar5 a5 bg-danger dker"></span>
-    </span></h2>
-    <div class="row row-sm"  >
-
-
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="ep in epRecente">
-        <div class="item">
-          <div class="pos-rlt">
-            <div class="bottom">
-              <!-- <span class="badge bg-info m-l-sm m-b-sm">03:20</span> -->
-            </div>
-            <div class="item-overlay opacity r r-2x bg-black">
-              <div class="text-info padder m-t-sm text-sm">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o text-muted"></i>
-              </div>
-              <div class="center text-center m-t-n">
-                <a v-on:click="play($index,'Recent')"><i class="icon-control-play i-2x"></i></a>
-              </div>
-              <div class="bottom padder m-b-sm">
-                <a href="#" class="pull-right">
-                  <i class="fa fa-heart-o"></i>
-                </a>
-                <a href="#">
-                  <i class="fa fa-plus-circle"></i>
-                </a>
-              </div>
-            </div>
-            <a >
-              <img v-bind:src="ep.vitrine" alt="{{ep.nome}}" class="r r-2x img-full">
-            </a>
+  <!-- POSCAST EPISODE TEMPLATE -->
+  <script type="text/template" id='episode-template'>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" >
+      <div class="item">
+        <div class="pos-rlt">
+          <div class="bottom">
+            <!-- <span class="badge bg-info m-l-sm m-b-sm">03:20</span> -->
           </div>
-          <div class="padder-v">
-            <a href="#" class="text-ellipsis">{{ep.nome}}</a>
-            <a href="#" class="text-ellipsis text-xs text-muted">{{ep.views | locale }} views</a>
+          <div class="item-overlay opacity r r-2x bg-black">
+            <div class="text-info padder m-t-sm text-sm">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o text-muted"></i>
+            </div>
+            <div class="center text-center m-t-n">
+              <a v-on:click="play()"><i class="icon-control-play i-2x"></i></a>
+            </div>
+            <div class="bottom padder m-b-sm">
+              <a href="#" class="pull-right">
+                <i class="fa fa-heart-o"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-plus-circle"></i>
+              </a>
+            </div>
           </div>
+          <a >
+            <img v-bind:src="episode.vitrine" alt="{{episode.nome}}" class="r r-2x img-full">
+          </a>
+        </div>
+        <div class="padder-v">
+          <a href="#" class="text-ellipsis">{{episode.nome}}</a>
+          <a href="#" class="text-ellipsis text-xs text-muted">{{episode.views | locale }} views</a>
         </div>
       </div>
     </div>
-
-    <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin" ><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
-    <h2 class="font-thin m-b">Mais Ouvidos<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
-      <span class="bar1 a1 bg-primary lter"></span>
-      <span class="bar2 a2 bg-info lt"></span>
-      <span class="bar3 a3 bg-success"></span>
-      <span class="bar4 a4 bg-warning dk"></span>
-      <span class="bar5 a5 bg-danger dker"></span>
-    </span></h2>
-    <div class="row row-sm"  >
+  </div>
+</script>
 
 
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="ep in epMais">
-        <div class="item">
-          <div class="pos-rlt">
-            <div class="bottom">
-              <!-- <span class="badge bg-info m-l-sm m-b-sm">03:20</span> -->
-            </div>
-            <div class="item-overlay opacity r r-2x bg-black">
-              <div class="text-info padder m-t-sm text-sm">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o text-muted"></i>
-              </div>
-              <div class="center text-center m-t-n">
-                <a v-on:click="play($index, 'Most')"><i class="icon-control-play i-2x"></i></a>
-              </div>
-              <div class="bottom padder m-b-sm">
-                <a href="#" class="pull-right">
-                  <i class="fa fa-heart-o"></i>
-                </a>
-                <a href="#">
-                  <i class="fa fa-plus-circle"></i>
-                </a>
-              </div>
-            </div>
-            <a >
-              <img v-bind:src="ep.vitrine" alt="{{ep.nome}}" class="r r-2x img-full">
-            </a>
+<!-- MAIN TEMPLATE -->
+<script type="text/template" id="main-template">
+ <section class="scrollable padder-lg w-f-md" id="bjax-target">
+
+   <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin" ><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
+   <h2 class="font-thin m-b">Lançamentos<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
+    <span class="bar1 a1 bg-primary lter"></span>
+    <span class="bar2 a2 bg-info lt"></span>
+    <span class="bar3 a3 bg-success"></span>
+    <span class="bar4 a4 bg-warning dk"></span>
+    <span class="bar5 a5 bg-danger dker"></span>
+  </span></h2>
+  <div class="row row-sm"  >
+
+   <episode v-for='episode in epRecente' :episode=episode > </episode>
+   <!--  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="ep in epRecente">
+      <div class="item">
+        <div class="pos-rlt">
+          <div class="bottom">
           </div>
-          <div class="padder-v">
-            <a href="#" class="text-ellipsis">{{ep.nome}}</a>
-            <a href="#" class="text-ellipsis text-xs text-muted">{{ep.views | locale }} views</a>
+          <div class="item-overlay opacity r r-2x bg-black">
+            <div class="text-info padder m-t-sm text-sm">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o text-muted"></i>
+            </div>
+            <div class="center text-center m-t-n">
+              <a v-on:click="play($index,'Recent')"><i class="icon-control-play i-2x"></i></a>
+            </div>
+            <div class="bottom padder m-b-sm">
+              <a href="#" class="pull-right">
+                <i class="fa fa-heart-o"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-plus-circle"></i>
+              </a>
+            </div>
           </div>
+          <a >
+            <img v-bind:src="ep.vitrine" alt="{{ep.nome}}" class="r r-2x img-full">
+          </a>
+        </div>
+        <div class="padder-v">
+          <a href="#" class="text-ellipsis">{{ep.nome}}</a>
+          <a href="#" class="text-ellipsis text-xs text-muted">{{ep.views | locale }} views</a>
         </div>
       </div>
-    </div>
+    </div> -->
+
+  </div>
+
+  <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin" ><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
+  <h2 class="font-thin m-b">Mais Ouvidos<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
+    <span class="bar1 a1 bg-primary lter"></span>
+    <span class="bar2 a2 bg-info lt"></span>
+    <span class="bar3 a3 bg-success"></span>
+    <span class="bar4 a4 bg-warning dk"></span>
+    <span class="bar5 a5 bg-danger dker"></span>
+  </span></h2>
+  <div class="row row-sm"  >
 
 
-
-    <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin" ><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
-    <h2 class="font-thin m-b">Menos Ouvidos<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
-      <span class="bar1 a1 bg-primary lter"></span>
-      <span class="bar2 a2 bg-info lt"></span>
-      <span class="bar3 a3 bg-success"></span>
-      <span class="bar4 a4 bg-warning dk"></span>
-      <span class="bar5 a5 bg-danger dker"></span>
-    </span></h2>
-    <div class="row row-sm"  >
-
-
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="ep in epMenos">
-        <div class="item">
-          <div class="pos-rlt">
-            <div class="bottom">
-              <!-- <span class="badge bg-info m-l-sm m-b-sm">03:20</span> -->
-            </div>
-            <div class="item-overlay opacity r r-2x bg-black">
-              <div class="text-info padder m-t-sm text-sm">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o text-muted"></i>
-              </div>
-              <div class="center text-center m-t-n">
-                <a v-on:click="play($index,'Lower')"><i class="icon-control-play i-2x"></i></a>
-              </div>
-              <div class="bottom padder m-b-sm">
-                <a href="#" class="pull-right">
-                  <i class="fa fa-heart-o"></i>
-                </a>
-                <a href="#">
-                  <i class="fa fa-plus-circle"></i>
-                </a>
-              </div>
-            </div>
-            <a >
-              <img v-bind:src="ep.vitrine" alt="{{ep.nome}}" class="r r-2x img-full">
-            </a>
+    <episode v-for='episode in epMais' :episode=episode > </episode>
+    <!-- <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="ep in epMais">
+      <div class="item">
+        <div class="pos-rlt">
+          <div class="bottom">
           </div>
-          <div class="padder-v">
-            <a href="#" class="text-ellipsis">{{ep.nome}}</a>
-            <a href="#" class="text-ellipsis text-xs text-muted">{{ep.views | locale }} views</a>
+          <div class="item-overlay opacity r r-2x bg-black">
+            <div class="text-info padder m-t-sm text-sm">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o text-muted"></i>
+            </div>
+            <div class="center text-center m-t-n">
+              <a v-on:click="play($index, 'Most')"><i class="icon-control-play i-2x"></i></a>
+            </div>
+            <div class="bottom padder m-b-sm">
+              <a href="#" class="pull-right">
+                <i class="fa fa-heart-o"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-plus-circle"></i>
+              </a>
+            </div>
           </div>
+          <a >
+            <img v-bind:src="ep.vitrine" alt="{{ep.nome}}" class="r r-2x img-full">
+          </a>
+        </div>
+        <div class="padder-v">
+          <a href="#" class="text-ellipsis">{{ep.nome}}</a>
+          <a href="#" class="text-ellipsis text-xs text-muted">{{ep.views | locale }} views</a>
         </div>
       </div>
-    </div>
-  </section>
+    </div> -->
+  </div>
+
+
+
+  <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin" ><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
+  <h2 class="font-thin m-b">Menos Ouvidos<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
+    <span class="bar1 a1 bg-primary lter"></span>
+    <span class="bar2 a2 bg-info lt"></span>
+    <span class="bar3 a3 bg-success"></span>
+    <span class="bar4 a4 bg-warning dk"></span>
+    <span class="bar5 a5 bg-danger dker"></span>
+  </span></h2>
+  <div class="row row-sm"  >
+
+
+    <episode v-for='episode in epMenos' :episode=episode > </episode>
+    <!-- <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="ep in epMenos">
+      <div class="item">
+        <div class="pos-rlt">
+          <div class="bottom">
+          </div>
+          <div class="item-overlay opacity r r-2x bg-black">
+            <div class="text-info padder m-t-sm text-sm">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o text-muted"></i>
+            </div>
+            <div class="center text-center m-t-n">
+              <a v-on:click="play($index,'Lower')"><i class="icon-control-play i-2x"></i></a>
+            </div>
+            <div class="bottom padder m-b-sm">
+              <a href="#" class="pull-right">
+                <i class="fa fa-heart-o"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-plus-circle"></i>
+              </a>
+            </div>
+          </div>
+          <a >
+            <img v-bind:src="ep.vitrine" alt="{{ep.nome}}" class="r r-2x img-full">
+          </a>
+        </div>
+        <div class="padder-v">
+          <a href="#" class="text-ellipsis">{{ep.nome}}</a>
+          <a href="#" class="text-ellipsis text-xs text-muted">{{ep.views | locale }} views</a>
+        </div>
+      </div>
+    </div> -->
+    
+  </div>
+</section>
 </script>
 
 <script src="js/jquery.min.js"></script>
@@ -881,67 +924,9 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/0.7.13/vue-router.js"></script>
 
+<script type="text/javascript" src="js/components.min.js"></script>
+
 <script type="text/javascript">
-  var main = Vue.component('main',{
-    template: '#main-template', 
-
-    data: function(){
-      return {
-        epMais: [],
-        epMenos: [], 
-        epRecente:[]
-      }; 
-    }, 
-
-    ready: function(){
-      var self = this; 
-      $.post('/api/epi/getListMostViewed').
-      done(function(data){
-        self.$set('epMais', data.msg); 
-      }); 
-
-      $.post('/api/epi/getListLowerViewed').
-      done(function(data){
-        self.$set('epMenos', data.msg); 
-      }); 
-
-      $.post('/api/epi/getListRecent').
-      done(function(data){
-        self.$set('epRecente', data.msg); 
-      }); 
-    }, 
-
-    methods:{
-      play: function(index, what){
-
-        var ep; 
-        if(what == 'Lower') 
-         ep = this.epMenos[index]; 
-       else if( what == 'Most')
-         ep = this.epMais[index]; 
-       else
-         ep = this.epRecente[index]; 
-
-       $('#jplayer_N').jPlayer("setMedia", {
-        mp3: ep.midia, 
-        title: ep.nome
-      }).jPlayer('play'); 
-
-       this.view(ep); 
-     }, 
-
-     view: function(ep){
-
-      ep.views++; 
-
-      $.post('/api/epi/view', {id: ep._id}). 
-      done(function(done){
-        console.log(done); 
-      }); 
-    }
-  }
-}); 
-
   var App = Vue.extend({});
 
   var router = new VueRouter(); 
@@ -957,10 +942,6 @@
   }); 
 
   router.start(App, 'body'); 
-
-</script>
-
-<script type="text/javascript">
 
 
   Vue.filter('locale', function(num){
