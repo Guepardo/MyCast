@@ -445,10 +445,17 @@
 <script>
 	export default {
 		replace: false,
-		data () {
+		data: () =>  {
 			return {
 				msg: 'Hello world!'
 			}
+		}, 
+
+		init: function (){
+			this.$on('change_title', (name) =>{
+				console.log(name); 
+				document.title = name; 
+			}); 
 		}
 	}
 </script>

@@ -13282,6 +13282,13 @@ exports.default = {
 		return {
 			msg: 'Hello world!'
 		};
+	},
+
+	init: function init() {
+		this.$on('change_title', function (name) {
+			console.log(name);
+			document.title = name;
+		});
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
@@ -13360,7 +13367,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 
+var Vue = require('vue');
 var episode = require('./episode.vue');
+
+var temp = new Vue();
 
 exports.default = {
   components: {
@@ -13369,6 +13379,7 @@ exports.default = {
 
   data: function data() {
     return {
+      title: 'Home',
       epMais: [],
       epMenos: [],
       epRecente: []
@@ -13388,6 +13399,8 @@ exports.default = {
     $.post('/api/epi/getListRecent').done(function (data) {
       self.$set('epRecente', data.msg);
     });
+
+    this.$dispatch('change_title', this.title);
   },
 
   methods: {}

@@ -50,7 +50,11 @@
 </template>
 
 <script>
+var Vue     = require('vue'); 
 var episode = require('./episode.vue'); 
+
+var temp = new Vue(); 
+
 
 export default {
   components:{
@@ -59,6 +63,7 @@ export default {
   
   data: function(){
       return {
+        title : 'Home', 
         epMais: [],
         epMenos: [], 
         epRecente:[]
@@ -81,6 +86,8 @@ export default {
       done(function(data){
         self.$set('epRecente', data.msg); 
       }); 
+
+      this.$dispatch('change_title', this.title); 
     }, 
 
     methods:{
