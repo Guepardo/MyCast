@@ -46,8 +46,11 @@
 			play: function(){
 				$('#jplayer_N').jPlayer("setMedia", {
 					mp3: this.episode.midia, 
-					title: this.episode.nome
+					title: this.episode.nome, 
+					_id: this.episode._id
 				}).jPlayer('play'); 
+
+				this.$dispatch('current_playing', this.episode._id); 
 
 				this.view(); 
 			}, 
@@ -65,7 +68,8 @@
 			addToPlay: function(){
 				myPlaylist.add({
 					mp3: this.episode.midia, 
-					title: this.episode.nome
+					title: this.episode.nome, 
+					_id: this.episode._id
 				}); 
 
 				alert('Episódio '+this.episode.nome+' adicionado a lista de reprodução'); 

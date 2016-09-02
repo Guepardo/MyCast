@@ -50,11 +50,7 @@
 </template>
 
 <script>
-var Vue     = require('vue'); 
 var episode = require('./episode.vue'); 
-
-var temp = new Vue(); 
-
 
 export default {
   components:{
