@@ -23,7 +23,6 @@ module.exports = (app) =>{
 					res.json({status: false, msg: error.errmsg}); 
 					return;		
 				}
-				 
 				res.json({status: true, msg: ep}); 
 			}); 
 		}, 
@@ -76,11 +75,9 @@ module.exports = (app) =>{
 					res.json({status: false, msg: error.errmsg}); 
 					return;		
 				}
-
 				ep.views++; 
 				ep.save(); 
 			}); 
-
 			res.json({status: true }); 
 		},
 
@@ -93,7 +90,6 @@ module.exports = (app) =>{
 					res.json({status: false, msg: error.errmsg}); 
 					return;		
 				}
-
 				res.json({status: true, msg: list}); 
 			}); 
 		}, 
@@ -107,7 +103,6 @@ module.exports = (app) =>{
 					res.json({status: false, msg: error.errmsg}); 
 					return;		
 				}
-
 				res.json({status: true, msg: list}); 
 			}); 
 		}, 
@@ -121,7 +116,6 @@ module.exports = (app) =>{
 					res.json({status: false, msg: error.errmsg}); 
 					return;		
 				}
-
 				res.json({status: true, msg: list}); 
 			}); 
 		}, 

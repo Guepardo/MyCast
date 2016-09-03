@@ -75,7 +75,9 @@
 					</section>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
+				<a class="btn btn-s-md btn-primary" data-toggle="modal" data-target="#adicionar-podcast" >Adicionar Podcast :)</a>
+
+				<!-- 	<a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
 						<span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
 							<img src="/images/a0.png" alt="...">
 						</span>
@@ -102,7 +104,7 @@
 						<li>
 							<a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
 						</li>
-					</ul>
+					</ul> -->
 				</li>
 			</ul>
 		</div>      
@@ -231,16 +233,22 @@
 		</section>
 	</section>    
 </section>
+
+<!-- Modal para aidcionar novo podcast -->
+	<adicionar-podcast-modal>s </adicionar-podcast-modal> 
+<!-- /Modal para aidcionar novo podcast -->
 </template>
 
 <script>
-	var Comentarios = require('./comentarios.vue'); 
-	var Player      = require('./player.vue'); 
+	var Comentarios           = require('./comentarios.vue'); 
+	var Player                = require('./player.vue'); 
+	var AdicionarPodcastModal = require('./adicionarPodcastModal.vue'); 
 
 	export default {
 		components:{
 			Comentarios, 
-			Player
+			Player, 
+			AdicionarPodcastModal
 		}, 
 
 		replace: false,

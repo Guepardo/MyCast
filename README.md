@@ -39,6 +39,52 @@ Exemplo de saída:
   ]
 }
 ```
+## Categoria
+### POST \api\cat\new
+Parâmetro:
+```js
+{
+    "nome" : "Terror", 
+    "descricao"  : "São programas com narrativas de terror."
+}
+```
+Exemplo de saída:
+```js
+{
+  "status": true,
+  "msg": {
+    "__v": 0,
+    "nome": "Terror",
+    "descricao": "São programas com narrativas de terror.",
+    "_id": "57cb4caa2819117c1a6130c2"
+  }
+}
+```
+
+### POST \api\cat\getAll
+Parâmetro:
+```js
+Sem parâmetro
+```
+Exemplo de saída:
+```js
+{
+  "msg": [
+    {
+      "_id": "57cb4c4a961bd3a81d027bd7",
+      "nome": "Tecnologia",
+      "descricao": "Podcasts de tencologia são sobre coisas legais da moda.",
+      "__v": 0
+    },
+    {
+      "_id": "57cb4caa2819117c1a6130c2",
+      "nome": "Terror",
+      "descricao": "São programas com narrativas de terror.",
+      "__v": 0
+    }
+  ]
+}
+```
 
 ## Episódio
 

@@ -45,9 +45,9 @@
 		methods:{
 			play: function(){
 				$('#jplayer_N').jPlayer("setMedia", {
-					mp3: this.episode.midia, 
+					mp3  : this.episode.midia, 
 					title: this.episode.nome, 
-					_id: this.episode._id
+					_id  : this.episode._id
 				}).jPlayer('play'); 
 
 				this.$dispatch('current_playing', this.episode._id); 
@@ -56,7 +56,6 @@
 			}, 
 
 			view: function(){
-
 				this.episode.views++; 
 
 				$.post('/api/epi/view', {id: this.episode._id}). 
