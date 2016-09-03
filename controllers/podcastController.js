@@ -8,6 +8,7 @@ module.exports = (app) =>{
 		new: (req, res, next) =>{
 			req.checkBody('url', 'url inválida').notEmpty(); 
 			req.checkBody('nome', 'nome inválido').notEmpty(); 
+			req.checkBody('categoria', 'categoria inválida').notEmpty(); 
 
 			var error = req.validationErrors(); 
 
@@ -16,12 +17,14 @@ module.exports = (app) =>{
 				return; 
 			}
 
-			var nome  = req.body.nome; 
-			var url   = req.body.url; 
+			var nome      = req.body.nome; 
+			var url       = req.body.url; 
+			var categoria = req.body.categoria; 
 
 			var podcast = new Podcast({
 				nome: nome, 
-				url : url 
+				url : url, 
+				categoria: categoria
 			}); 
 
 			podcast.save(function (error, pod){
@@ -55,9 +58,9 @@ module.exports = (app) =>{
 		}, 
 
 		getAll: (req, res, next) =>{
-			
 			Podcast.find(). 
-			select('nome _id'). 
+			select('nome _id categoria').
+			populate('categoria').  
 			exec((error, podcasts) =>{
 				if(error){
 					res.json({status: false, msg: error.errmsg}); 

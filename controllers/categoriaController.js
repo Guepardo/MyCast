@@ -39,7 +39,12 @@ module.exports = (app) =>{
 					return; 
 				}
 
-				res.json({msg: categorias}); 
+				var result = {
+					status: true, 
+					msg: categorias
+				}; 
+
+				res.json(result); 
 			}); 		
 		}
 	}

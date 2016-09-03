@@ -7,14 +7,16 @@ Documentação da api de uma pequena aplicação.
 Parâmetro:
 ```js
 {
-    "nome" : "Hipsters Tech", 
-    "url"  : "http://hipsters.tech/feed/podcast/"
+    "nome" : "99vidas", 
+    "url"  : "http://99vidas.com.br/feed/", 
+    "categoria" : "57cb4c4a961bd3a81d027bd7"
 }
 ```
 Exemplo de saída:
 ```js
 {status : true }
 ```
+
 ### POST \api\pod\getAll
 Parâmetro:
 ```js
@@ -25,16 +27,24 @@ Exemplo de saída:
 {
   "msg": [
     {
-      "_id": "57b423e04e47f1d40e5912ba",
-      "nome": "99vidas"
+      "_id": "57cb5362de312fcc28c3bd2a",
+      "nome": "99vidas",
+      "categoria": {
+        "_id": "57cb4c4a961bd3a81d027bd7",
+        "nome": "Tecnologia",
+        "descricao": "Podcasts de tencologia são sobre coisas legais da moda.",
+        "__v": 0
+      }
     },
     {
-      "_id": "57b424144e47f1d40e5912f0",
-      "nome": "NerdCast"
-    },
-    {
-      "_id": "57b4242a4e47f1d40e59152c",
-      "nome": "Hipsters Tech"
+      "_id": "57cb543278271e5024f60b9d",
+      "nome": "Hipsters Tech",
+      "categoria": {
+        "_id": "57cb4c4a961bd3a81d027bd7",
+        "nome": "Tecnologia",
+        "descricao": "Podcasts de tencologia são sobre coisas legais da moda.",
+        "__v": 0
+      }
     }
   ]
 }
@@ -69,6 +79,7 @@ Sem parâmetro
 Exemplo de saída:
 ```js
 {
+  "status": true,
   "msg": [
     {
       "_id": "57cb4c4a961bd3a81d027bd7",
