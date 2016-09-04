@@ -13337,15 +13337,18 @@ Object.defineProperty(exports, "__esModule", {
 var Comentarios = require('./comentarios.vue');
 var Player = require('./player.vue');
 var AdicionarPodcastModal = require('./adicionarPodcastModal.vue');
+var SearchFormulario = require('./searchFormulario.vue');
 
 exports.default = {
 	components: {
 		Comentarios: Comentarios,
 		Player: Player,
-		AdicionarPodcastModal: AdicionarPodcastModal
+		AdicionarPodcastModal: AdicionarPodcastModal,
+		SearchFormulario: SearchFormulario
 	},
 
 	replace: false,
+
 	data: function data() {
 		return {
 			msg: 'Hello world!',
@@ -13368,7 +13371,7 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<section class=\"vbox\">\n\t\t<header class=\"bg-white-only header header-md navbar navbar-fixed-top-xs\">\n\t\t\t<div class=\"navbar-header aside bg-info nav-xs\">\n\t\t\t\t<a class=\"btn btn-link visible-xs\" data-toggle=\"class:nav-off-screen,open\" data-target=\"#nav,html\">\n\t\t\t\t\t<i class=\"icon-list\"></i>\n\t\t\t\t</a>\n\t\t\t\t<a v-link=\"{path : '/'}\" class=\"navbar-brand text-lt\">\n\t\t\t\t\t<i class=\"icon-earphones\"></i>\n\t\t\t\t\t<img src=\"/images/logo.png\" alt=\".\" class=\"hide\">\n\t\t\t\t\t<span class=\"hidden-nav-xs m-l-sm\">MyCast</span>\n\t\t\t\t</a>\n\t\t\t\t<a class=\"btn btn-link visible-xs\" data-toggle=\"dropdown\" data-target=\".user\">\n\t\t\t\t\t<i class=\"icon-settings\"></i>\n\t\t\t\t</a>\n\t\t\t</div>      <ul class=\"nav navbar-nav hidden-xs\">\n\t\t\t<li>\n\t\t\t\t<a href=\"#nav,.navbar-header\" data-toggle=\"class:nav-xs,nav-xs\" class=\"text-muted\">\n\t\t\t\t\t<i class=\"fa fa-indent text\"></i>\n\t\t\t\t\t<i class=\"fa fa-dedent text-active\"></i>\n\t\t\t\t</a>\n\t\t\t</li>\n\t\t</ul>\n\t\t<form class=\"navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs\" role=\"search\">\n\t\t\t<div class=\"form-group\">\n\t\t\t\t<div class=\"input-group\">\n\t\t\t\t\t<span class=\"input-group-btn\">\n\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-sm bg-white btn-icon rounded\"><i class=\"fa fa-search\"></i></button>\n\t\t\t\t\t</span>\n\t\t\t\t\t<input type=\"text\" class=\"form-control input-sm no-border rounded\" placeholder=\"Porcurar por um podcast...\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\t\t<div class=\"navbar-right \">\n\t\t\t<ul class=\"nav navbar-nav m-n hidden-xs nav-user user\">\n\t\t\t\t<li class=\"hidden-xs\">\n\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle lt\" data-toggle=\"dropdown\">\n\t\t\t\t\t\t<i class=\"icon-bell\"></i>\n\t\t\t\t\t\t<span class=\"badge badge-sm up bg-danger count\">2</span>\n\t\t\t\t\t</a>\n\t\t\t\t\t<section class=\"dropdown-menu aside-xl animated fadeInUp\">\n\t\t\t\t\t\t<section class=\"panel bg-white\">\n\t\t\t\t\t\t\t<div class=\"panel-heading b-light bg-light\">\n\t\t\t\t\t\t\t\t<strong>You have <span class=\"count\">2</span> notifications</strong>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"list-group list-group-alt\">\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"media list-group-item\">\n\t\t\t\t\t\t\t\t\t<span class=\"pull-left thumb-sm\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/images/a0.png\" alt=\"...\" class=\"img-circle\">\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"media-body block m-b-none\">\n\t\t\t\t\t\t\t\t\t\tUse awesome animate.css<br>\n\t\t\t\t\t\t\t\t\t\t<small class=\"text-muted\">10 minutes ago</small>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"media list-group-item\">\n\t\t\t\t\t\t\t\t\t<span class=\"media-body block m-b-none\">\n\t\t\t\t\t\t\t\t\t\t1.0 initial released<br>\n\t\t\t\t\t\t\t\t\t\t<small class=\"text-muted\">1 hour ago</small>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"panel-footer text-sm\">\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"pull-right\"><i class=\"fa fa-cog\"></i></a>\n\t\t\t\t\t\t\t\t<a href=\"#notes\" data-toggle=\"class:show animated fadeInRight\">See all the notifications</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</section>\n\t\t\t\t\t</section>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"dropdown\">\n\t\t\t\t<a class=\"btn btn-s-md btn-primary\" data-toggle=\"modal\" data-target=\"#adicionar-podcast\">Adicionar Podcast :)</a>\n\n\t\t\t\t<!-- \t<a href=\"#\" class=\"dropdown-toggle bg clear\" data-toggle=\"dropdown\">\n\t\t\t\t\t\t<span class=\"thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm\">\n\t\t\t\t\t\t\t<img src=\"/images/a0.png\" alt=\"...\">\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\tJohn.Smith <b class=\"caret\"></b>\n\t\t\t\t\t</a>\n\t\t\t\t\t<ul class=\"dropdown-menu animated fadeInRight\">            \n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<span class=\"arrow top\"></span>\n\t\t\t\t\t\t\t<a href=\"#\">Settings</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a href=\"profile.html\">Profile</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a href=\"#\">\n\t\t\t\t\t\t\t\t<span class=\"badge bg-danger pull-right\">3</span>\n\t\t\t\t\t\t\t\tNotifications\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a href=\"docs.html\">Help</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a href=\"modal.lockme.html\" data-toggle=\"ajaxModal\" >Logout</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t</ul> -->\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</div>      \n\t</header>\n\t<section>\n\t\t<section class=\"hbox stretch\">\n\t\t\t<!-- .aside -->\n\t\t\t<aside class=\"bg-black dk nav-xs aside hidden-print\" id=\"nav\">          \n\t\t\t\t<section class=\"vbox\">\n\t\t\t\t\t<section class=\"w-f-md scrollable\">\n\t\t\t\t\t\t<div class=\"slim-scroll\" data-height=\"auto\" data-disable-fade-out=\"true\" data-distance=\"0\" data-size=\"10px\" data-railopacity=\"0.2\">\n\n\n\n\t\t\t\t\t\t\t<!-- nav -->                 \n\t\t\t\t\t\t\t<nav class=\"nav-primary hidden-xs\">\n\t\t\t\t\t\t\t\t<ul class=\"nav bg clearfix\">\n\t\t\t\t\t\t\t\t\t<li class=\"hidden-nav-xs padder m-t m-b-sm text-xs text-muted\">\n\t\t\t\t\t\t\t\t\t\tDescobrir\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a v-link=\"{path : '/'}\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"icon-disc icon text-success\"></i>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"font-bold\">Novidades</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a v-link=\"{path : '/genero'}\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"icon-music-tone-alt icon text-info\"></i>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"font-bold\">Gêneros</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"events.html\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"icon-drawer icon text-primary-lter\"></i>\n\t\t\t\t\t\t\t\t\t\t\t<b class=\"badge bg-primary pull-right\">6</b>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"font-bold\">Eventos</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"listen.html\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"icon-list icon  text-info-dker\"></i>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"font-bold\">Ouvindo</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\n\t\t\t\t\t\t\t\t\t<!-- <li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"video.html\" data-target=\"#content\" data-el=\"#bjax-el\" data-replace=\"true\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"icon-social-youtube icon  text-primary\"></i>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"font-bold\">Video</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li class=\"m-b hidden-nav-xs\"></li> -->\n\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t</nav>\n\t\t\t\t\t\t\t<!-- / nav -->\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</section>\n\t\t\t\t\t\n\t\t\t\t\t<footer class=\"footer hidden-xs no-padder text-center-nav-xs\">\n\t\t\t\t\t\t<div class=\"bg hidden-xs \">\n\t\t\t\t\t\t\t<div class=\"dropdown dropup wrapper-sm clearfix\">\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t\t\t\t\t\t<span class=\"thumb-sm avatar pull-left m-l-xs\">                        \n\t\t\t\t\t\t\t\t\t\t<img src=\"/images/a3.png\" class=\"dker\" alt=\"...\">\n\t\t\t\t\t\t\t\t\t\t<i class=\"on b-black\"></i>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"hidden-nav-xs clear\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"block m-l\">\n\t\t\t\t\t\t\t\t\t\t\t<strong class=\"font-bold text-lt\">John.Smith</strong> \n\t\t\t\t\t\t\t\t\t\t\t<b class=\"caret\"></b>\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t<span class=\"text-muted text-xs block m-l\">Art Director</span>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<ul class=\"dropdown-menu animated fadeInRight aside text-left\">                      \n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<span class=\"arrow bottom hidden-nav-xs\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Settings</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"profile.html\">Profile</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"badge bg-danger pull-right\">3</span>\n\t\t\t\t\t\t\t\t\t\t\tNotifications\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"docs.html\">Help</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"modal.lockme.html\" data-toggle=\"ajaxModal\">Logout</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>           \n\t\t\t\t\t</footer>\n\t\t\t\t</section>\n\t\t\t</aside>\n\t\t\t<!-- /.aside -->\n\n\t\t\t<section id=\"content\">\n\t\t\t\t<section class=\"hbox stretch\">\n\t\t\t\t\t<section>\n\t\t\t\t\t\t<section class=\"vbox\">\n\t\t\t\t\t\t\t<!-- Outlet SPA -->\n\t\t\t\t\t\t\t<router-view> </router-view>\n\t\t\t\t\t\t\t<!-- /Outlet SPA  -->\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<!-- Player -->\n\t\t\t\t\t\t\t<player> </player>\n\t\t\t\t\t\t\t<!-- / Player -->\n\t\t\t\t\t\t</section>\n\t\t\t\t\t</section>\n\n\t\t\t\t\t<!-- Comentários -->\n\t\t\t\t\t<comentarios> </comentarios>\n\t\t\t\t\t<!-- / Comentários -->\n\t\t\t\t</section>\n\n\t\t\t\t<a href=\"#\" class=\"hide nav-off-screen-block\" data-toggle=\"class:nav-off-screen,open\" data-target=\"#nav,html\"></a>\n\t\t\t</section>\n\t\t</section>\n\t</section>    \n</section>\n\n<!-- Modal para aidcionar novo podcast -->\n\t<adicionar-podcast-modal>s </adicionar-podcast-modal> \n<!-- /Modal para aidcionar novo podcast -->\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<section class=\"vbox\">\n\t\t<header class=\"bg-white-only header header-md navbar navbar-fixed-top-xs\">\n\t\t\t<div class=\"navbar-header aside bg-info nav-xs\">\n\t\t\t\t<a class=\"btn btn-link visible-xs\" data-toggle=\"class:nav-off-screen,open\" data-target=\"#nav,html\">\n\t\t\t\t\t<i class=\"icon-list\"></i>\n\t\t\t\t</a>\n\t\t\t\t<a v-link=\"{path : '/'}\" class=\"navbar-brand text-lt\">\n\t\t\t\t\t<i class=\"icon-earphones\"></i>\n\t\t\t\t\t<img src=\"/images/logo.png\" alt=\".\" class=\"hide\">\n\t\t\t\t\t<span class=\"hidden-nav-xs m-l-sm\">MyCast</span>\n\t\t\t\t</a>\n\t\t\t\t<a class=\"btn btn-link visible-xs\" data-toggle=\"dropdown\" data-target=\".user\">\n\t\t\t\t\t<i class=\"icon-settings\"></i>\n\t\t\t\t</a>\n\t\t\t</div>      <ul class=\"nav navbar-nav hidden-xs\">\n\t\t\t<li>\n\t\t\t\t<a href=\"#nav,.navbar-header\" data-toggle=\"class:nav-xs,nav-xs\" class=\"text-muted\">\n\t\t\t\t\t<i class=\"fa fa-indent text\"></i>\n\t\t\t\t\t<i class=\"fa fa-dedent text-active\"></i>\n\t\t\t\t</a>\n\t\t\t</li>\n\t\t</ul>\n\t\t\n\n\t\t<!-- Formulário search -->\n\t\t<search-formulario> </search-formulario>\n\t\t<!-- Formulário search -->\n\n\t\t<div class=\"navbar-right \">\n\t\t\t<ul class=\"nav navbar-nav m-n hidden-xs nav-user user\">\n\t\t\t\t<li class=\"hidden-xs\">\n\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle lt\" data-toggle=\"dropdown\">\n\t\t\t\t\t\t<i class=\"icon-bell\"></i>\n\t\t\t\t\t\t<span class=\"badge badge-sm up bg-danger count\">2</span>\n\t\t\t\t\t</a>\n\t\t\t\t\t<section class=\"dropdown-menu aside-xl animated fadeInUp\">\n\t\t\t\t\t\t<section class=\"panel bg-white\">\n\t\t\t\t\t\t\t<div class=\"panel-heading b-light bg-light\">\n\t\t\t\t\t\t\t\t<strong>You have <span class=\"count\">2</span> notifications</strong>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"list-group list-group-alt\">\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"media list-group-item\">\n\t\t\t\t\t\t\t\t\t<span class=\"pull-left thumb-sm\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/images/a0.png\" alt=\"...\" class=\"img-circle\">\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"media-body block m-b-none\">\n\t\t\t\t\t\t\t\t\t\tUse awesome animate.css<br>\n\t\t\t\t\t\t\t\t\t\t<small class=\"text-muted\">10 minutes ago</small>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"media list-group-item\">\n\t\t\t\t\t\t\t\t\t<span class=\"media-body block m-b-none\">\n\t\t\t\t\t\t\t\t\t\t1.0 initial released<br>\n\t\t\t\t\t\t\t\t\t\t<small class=\"text-muted\">1 hour ago</small>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"panel-footer text-sm\">\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"pull-right\"><i class=\"fa fa-cog\"></i></a>\n\t\t\t\t\t\t\t\t<a href=\"#notes\" data-toggle=\"class:show animated fadeInRight\">See all the notifications</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</section>\n\t\t\t\t\t</section>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"dropdown\">\n\t\t\t\t<a class=\"btn btn-s-md btn-primary\" data-toggle=\"modal\" data-target=\"#adicionar-podcast\">Adicionar Podcast :)</a>\n\n\t\t\t\t<!-- \t<a href=\"#\" class=\"dropdown-toggle bg clear\" data-toggle=\"dropdown\">\n\t\t\t\t\t\t<span class=\"thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm\">\n\t\t\t\t\t\t\t<img src=\"/images/a0.png\" alt=\"...\">\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\tJohn.Smith <b class=\"caret\"></b>\n\t\t\t\t\t</a>\n\t\t\t\t\t<ul class=\"dropdown-menu animated fadeInRight\">            \n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<span class=\"arrow top\"></span>\n\t\t\t\t\t\t\t<a href=\"#\">Settings</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a href=\"profile.html\">Profile</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a href=\"#\">\n\t\t\t\t\t\t\t\t<span class=\"badge bg-danger pull-right\">3</span>\n\t\t\t\t\t\t\t\tNotifications\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a href=\"docs.html\">Help</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a href=\"modal.lockme.html\" data-toggle=\"ajaxModal\" >Logout</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t</ul> -->\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</div>      \n\t</header>\n\t<section>\n\t\t<section class=\"hbox stretch\">\n\t\t\t<!-- .aside -->\n\t\t\t<aside class=\"bg-black dk nav-xs aside hidden-print\" id=\"nav\">          \n\t\t\t\t<section class=\"vbox\">\n\t\t\t\t\t<section class=\"w-f-md scrollable\">\n\t\t\t\t\t\t<div class=\"slim-scroll\" data-height=\"auto\" data-disable-fade-out=\"true\" data-distance=\"0\" data-size=\"10px\" data-railopacity=\"0.2\">\n\n\n\n\t\t\t\t\t\t\t<!-- nav -->                 \n\t\t\t\t\t\t\t<nav class=\"nav-primary hidden-xs\">\n\t\t\t\t\t\t\t\t<ul class=\"nav bg clearfix\">\n\t\t\t\t\t\t\t\t\t<li class=\"hidden-nav-xs padder m-t m-b-sm text-xs text-muted\">\n\t\t\t\t\t\t\t\t\t\tDescobrir\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a v-link=\"{path : '/'}\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"icon-disc icon text-success\"></i>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"font-bold\">Novidades</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a v-link=\"{path : '/genero'}\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"icon-music-tone-alt icon text-info\"></i>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"font-bold\">Gêneros</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"events.html\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"icon-drawer icon text-primary-lter\"></i>\n\t\t\t\t\t\t\t\t\t\t\t<b class=\"badge bg-primary pull-right\">6</b>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"font-bold\">Eventos</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"listen.html\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"icon-list icon  text-info-dker\"></i>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"font-bold\">Ouvindo</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\n\t\t\t\t\t\t\t\t\t<!-- <li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"video.html\" data-target=\"#content\" data-el=\"#bjax-el\" data-replace=\"true\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"icon-social-youtube icon  text-primary\"></i>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"font-bold\">Video</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li class=\"m-b hidden-nav-xs\"></li> -->\n\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t</nav>\n\t\t\t\t\t\t\t<!-- / nav -->\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</section>\n\t\t\t\t\t\n\t\t\t\t\t<footer class=\"footer hidden-xs no-padder text-center-nav-xs\">\n\t\t\t\t\t\t<div class=\"bg hidden-xs \">\n\t\t\t\t\t\t\t<div class=\"dropdown dropup wrapper-sm clearfix\">\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t\t\t\t\t\t<span class=\"thumb-sm avatar pull-left m-l-xs\">                        \n\t\t\t\t\t\t\t\t\t\t<img src=\"/images/a3.png\" class=\"dker\" alt=\"...\">\n\t\t\t\t\t\t\t\t\t\t<i class=\"on b-black\"></i>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"hidden-nav-xs clear\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"block m-l\">\n\t\t\t\t\t\t\t\t\t\t\t<strong class=\"font-bold text-lt\">John.Smith</strong> \n\t\t\t\t\t\t\t\t\t\t\t<b class=\"caret\"></b>\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t<span class=\"text-muted text-xs block m-l\">Art Director</span>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<ul class=\"dropdown-menu animated fadeInRight aside text-left\">                      \n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<span class=\"arrow bottom hidden-nav-xs\"></span>\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Settings</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"profile.html\">Profile</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"badge bg-danger pull-right\">3</span>\n\t\t\t\t\t\t\t\t\t\t\tNotifications\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"docs.html\">Help</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"modal.lockme.html\" data-toggle=\"ajaxModal\">Logout</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>           \n\t\t\t\t\t</footer>\n\t\t\t\t</section>\n\t\t\t</aside>\n\t\t\t<!-- /.aside -->\n\n\t\t\t<section id=\"content\">\n\t\t\t\t<section class=\"hbox stretch\">\n\t\t\t\t\t<section>\n\t\t\t\t\t\t<section class=\"vbox\">\n\t\t\t\t\t\t\t<!-- Outlet SPA -->\n\t\t\t\t\t\t\t<router-view> </router-view>\n\t\t\t\t\t\t\t<!-- /Outlet SPA  -->\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<!-- Player -->\n\t\t\t\t\t\t\t<player> </player>\n\t\t\t\t\t\t\t<!-- / Player -->\n\t\t\t\t\t\t</section>\n\t\t\t\t\t</section>\n\n\t\t\t\t\t<!-- Comentários -->\n\t\t\t\t\t<comentarios> </comentarios>\n\t\t\t\t\t<!-- / Comentários -->\n\t\t\t\t</section>\n\n\t\t\t\t<a href=\"#\" class=\"hide nav-off-screen-block\" data-toggle=\"class:nav-off-screen,open\" data-target=\"#nav,html\"></a>\n\t\t\t</section>\n\t\t</section>\n\t</section>    \n</section>\n\n<!-- Modal para aidcionar novo podcast -->\n\t<adicionar-podcast-modal>s </adicionar-podcast-modal> \n<!-- /Modal para aidcionar novo podcast -->\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -13383,7 +13386,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-115b4de2", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"./adicionarPodcastModal.vue":6,"./comentarios.vue":8,"./player.vue":11,"vue":4,"vue-hot-reload-api":2,"vueify/lib/insert-css":5}],8:[function(require,module,exports){
+},{"./adicionarPodcastModal.vue":6,"./comentarios.vue":8,"./player.vue":11,"./searchFormulario.vue":13,"vue":4,"vue-hot-reload-api":2,"vueify/lib/insert-css":5}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13563,12 +13566,99 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":4,"vue-hot-reload-api":2}],12:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+
+var Episodio = require('./episode.vue');
+
+exports.default = {
+  components: {
+    Episodio: Episodio
+  },
+
+  data: function data() {
+    return {
+      episodios: [],
+      query: ''
+    };
+  },
+
+  ready: function ready() {},
+
+  events: {
+    'query_search': function query_search(data) {
+      console.log(data.query);
+      this.query = data.query;
+    }
+  }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <section class=\"scrollable padder-lg w-f-md\" id=\"bjax-target\">\n   <a href=\"#\" class=\"pull-right text-muted m-t-lg\" data-toggle=\"class:fa-spin\"><i class=\"icon-refresh i-lg  inline\" id=\"refresh\"></i></a>\n   <h2 class=\"font-thin m-b\">Resultados para {{query}}<span class=\"musicbar animate inline m-l-sm\" style=\"width:20px;height:20px\">\n    <span class=\"bar1 a1 bg-primary lter\"></span>\n    <span class=\"bar2 a2 bg-info lt\"></span>\n    <span class=\"bar3 a3 bg-success\"></span>\n    <span class=\"bar4 a4 bg-warning dk\"></span>\n    <span class=\"bar5 a5 bg-danger dker\"></span>\n  </span></h2>\n\n  <div class=\"row row-sm\">\n   <episode v-for=\"episodio in episodios\" :episode=\"episodio\"> </episode>\n  </div>\n</section>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-74211df7", module.exports)
+  } else {
+    hotAPI.update("_v-74211df7", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"./episode.vue":9,"vue":4,"vue-hot-reload-api":2}],13:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+
+var Search = require('./search.vue');
+
+exports.default = {
+	data: function data() {
+		return {
+			query: ''
+		};
+	},
+
+	methods: {
+		onQuery: function onQuery() {
+			var data = {
+				query: this.query
+			};
+
+			this.$parent.$broadcast('query_search', data);
+
+			this.$router.go('/search');
+
+			console.log(this.$parent);
+		}
+	}
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<form class=\"navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs\" role=\"search\">\n\t<div class=\"form-group\">\n\t\t<div class=\"input-group\">\n\t\t\t<span class=\"input-group-btn\">\n\t\t\t\t<button type=\"submit\" class=\"btn btn-sm bg-white btn-icon rounded\"><i class=\"fa fa-search\"></i></button>\n\t\t\t</span>\n\t\t\t<input type=\"text\" class=\"form-control input-sm no-border rounded\" placeholder=\"Porcurar por um podcast...\" @keyup=\"onQuery\" v-model=\"query\">\n\t\t</div>\n\t</div>\n</form>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-1db75c49", module.exports)
+  } else {
+    hotAPI.update("_v-1db75c49", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"./search.vue":12,"vue":4,"vue-hot-reload-api":2}],14:[function(require,module,exports){
 // main.js
 var Vue       = require('vue')
 var VueRouter = require('vue-router'); 
 
-var App   = require('./components/app.vue')
-var Home  = require('./components/home.vue'); 
+var App    = require('./components/app.vue')
+var Home   = require('./components/home.vue'); 
+var Search = require('./components/search.vue'); 
 
 Vue.use(VueRouter); 
 
@@ -13577,10 +13667,15 @@ var router = new VueRouter();
 router.map({
 	'/genero':{
 		component: {template : '<h1>Testando aplicação Single Page Application</h1>'}
+	},
+
+	'/search': {
+		component: Search
 	}, 
+
 	'*': {
 		component: Home
-	}
+	}, 
 }); 
 
 
@@ -13592,4 +13687,4 @@ Vue.filter('locale', function(num){
 
 router.start(App, 'body'); 
 
-},{"./components/app.vue":7,"./components/home.vue":10,"vue":4,"vue-router":3}]},{},[12]);
+},{"./components/app.vue":7,"./components/home.vue":10,"./components/search.vue":12,"vue":4,"vue-router":3}]},{},[14]);

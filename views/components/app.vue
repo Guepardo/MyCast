@@ -28,16 +28,12 @@
 				</a>
 			</li>
 		</ul>
-		<form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
-			<div class="form-group">
-				<div class="input-group">
-					<span class="input-group-btn">
-						<button type="submit" class="btn btn-sm bg-white btn-icon rounded"><i class="fa fa-search"></i></button>
-					</span>
-					<input type="text" class="form-control input-sm no-border rounded" placeholder="Porcurar por um podcast...">
-				</div>
-			</div>
-		</form>
+		
+
+		<!-- Formulário search -->
+		<search-formulario> </search-formulario>
+		<!-- Formulário search -->
+
 		<div class="navbar-right ">
 			<ul class="nav navbar-nav m-n hidden-xs nav-user user">
 				<li class="hidden-xs">
@@ -243,15 +239,18 @@
 	var Comentarios           = require('./comentarios.vue'); 
 	var Player                = require('./player.vue'); 
 	var AdicionarPodcastModal = require('./adicionarPodcastModal.vue'); 
+	var SearchFormulario      = require('./searchFormulario.vue'); 
 
 	export default {
 		components:{
 			Comentarios, 
 			Player, 
-			AdicionarPodcastModal
+			AdicionarPodcastModal, 
+			SearchFormulario
 		}, 
 
 		replace: false,
+
 		data: () =>  {
 			return {
 				msg: 'Hello world!', 

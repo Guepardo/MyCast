@@ -2,8 +2,9 @@
 var Vue       = require('vue')
 var VueRouter = require('vue-router'); 
 
-var App   = require('./components/app.vue')
-var Home  = require('./components/home.vue'); 
+var App    = require('./components/app.vue')
+var Home   = require('./components/home.vue'); 
+var Search = require('./components/search.vue'); 
 
 Vue.use(VueRouter); 
 
@@ -12,10 +13,15 @@ var router = new VueRouter();
 router.map({
 	'/genero':{
 		component: {template : '<h1>Testando aplicação Single Page Application</h1>'}
+	},
+
+	'/search': {
+		component: Search
 	}, 
+
 	'*': {
 		component: Home
-	}
+	}, 
 }); 
 
 
