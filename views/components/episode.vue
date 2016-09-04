@@ -30,7 +30,7 @@
 				</a>
 			</div>
 			<div class="padder-v">
-				<a href="#" class="text-ellipsis">{{episode.nome}}</a>
+				<a href="#" v-bind:title="episode.nome" class="text-ellipsis" alt="{{episode.nome}}" >{{episode.nome}}</a>
 				<a href="#" class="text-ellipsis text-xs text-muted">{{episode.views | locale }} views</a>
 			</div>
 		</div>

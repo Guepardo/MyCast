@@ -23,15 +23,11 @@
 
 		methods: {
 			onQuery: function(){
-				var data ={
+				var data = {
 					query : this.query
 				}; 
-
 				this.$parent.$broadcast('query_search', data); 
-
 				this.$router.go('/search'); 
-				
-				console.log(this.$parent); 
 			}
 		}
 	}

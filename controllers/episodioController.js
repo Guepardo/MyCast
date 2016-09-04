@@ -3,6 +3,31 @@ module.exports = (app) =>{
 	var Podcast  = app.models.podcastModel; 
 
 	var controller ={
+		search: (req, res, next) =>{
+			req.checkBody('query', 'query inválida').notEmpty(); 
+			var error = req.validationErrors(); 
+
+			if(error){
+				res.json({status: false , msg: error}); 
+				return; 
+			}
+
+			var query = req.body.query;
+			var regex = new RegExp(query, 'i'); 
+
+			Episodio.find({
+				nome: { $regex : regex }
+			}). 
+			limit(40). 
+			exec((error, episodios) => {
+				if(error){
+					res.json({status: false, msg: error.errmsg}); 
+					return;		
+				}
+				res.json({status: true, msg: episodios}); 
+			}); 
+		}, 
+
 		getById: (req, res, next) =>{
 			req.checkBody('id', 'Id inválido').notEmpty(); 
 

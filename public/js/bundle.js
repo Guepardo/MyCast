@@ -13472,7 +13472,7 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"col-xs-6 col-sm-4 col-md-3 col-lg-2\">\n\t<div class=\"item\">\n\t\t<div class=\"pos-rlt\">\n\t\t\t<div class=\"bottom\">\n\t\t\t\t<!-- <span class=\"badge bg-info m-l-sm m-b-sm\">03:20</span> -->\n\t\t\t</div>\n\t\t\t<div class=\"item-overlay opacity r r-2x bg-black\">\n\t\t\t\t<div class=\"text-info padder m-t-sm text-sm\">\n\t\t\t\t\t<i class=\"fa fa-star\"></i>\n\t\t\t\t\t<i class=\"fa fa-star\"></i>\n\t\t\t\t\t<i class=\"fa fa-star\"></i>\n\t\t\t\t\t<i class=\"fa fa-star\"></i>\n\t\t\t\t\t<i class=\"fa fa-star-o text-muted\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"center text-center m-t-n\">\n\t\t\t\t\t<a v-on:click=\"play()\"><i class=\"icon-control-play i-2x\"></i></a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"bottom padder m-b-sm\">\n\t\t\t\t\t<a href=\"#\" class=\"pull-right\">\n\t\t\t\t\t\t<i class=\"fa fa-heart-o\"></i>\n\t\t\t\t\t</a>\n\t\t\t\t\t<a v-on:click=\"addToPlay\">\n\t\t\t\t\t\t<i class=\"fa fa-plus-circle\"></i>\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<a>\n\t\t\t\t<img v-bind:src=\"episode.vitrine\" alt=\"{{episode.nome}}\" class=\"r r-2x img-full\">\n\t\t\t</a>\n\t\t</div>\n\t\t<div class=\"padder-v\">\n\t\t\t<a href=\"#\" class=\"text-ellipsis\">{{episode.nome}}</a>\n\t\t\t<a href=\"#\" class=\"text-ellipsis text-xs text-muted\">{{episode.views | locale }} views</a>\n\t\t</div>\n\t</div>\n</div>\n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"col-xs-6 col-sm-4 col-md-3 col-lg-2\">\n\t<div class=\"item\">\n\t\t<div class=\"pos-rlt\">\n\t\t\t<div class=\"bottom\">\n\t\t\t\t<!-- <span class=\"badge bg-info m-l-sm m-b-sm\">03:20</span> -->\n\t\t\t</div>\n\t\t\t<div class=\"item-overlay opacity r r-2x bg-black\">\n\t\t\t\t<div class=\"text-info padder m-t-sm text-sm\">\n\t\t\t\t\t<i class=\"fa fa-star\"></i>\n\t\t\t\t\t<i class=\"fa fa-star\"></i>\n\t\t\t\t\t<i class=\"fa fa-star\"></i>\n\t\t\t\t\t<i class=\"fa fa-star\"></i>\n\t\t\t\t\t<i class=\"fa fa-star-o text-muted\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"center text-center m-t-n\">\n\t\t\t\t\t<a v-on:click=\"play()\"><i class=\"icon-control-play i-2x\"></i></a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"bottom padder m-b-sm\">\n\t\t\t\t\t<a href=\"#\" class=\"pull-right\">\n\t\t\t\t\t\t<i class=\"fa fa-heart-o\"></i>\n\t\t\t\t\t</a>\n\t\t\t\t\t<a v-on:click=\"addToPlay\">\n\t\t\t\t\t\t<i class=\"fa fa-plus-circle\"></i>\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<a>\n\t\t\t\t<img v-bind:src=\"episode.vitrine\" alt=\"{{episode.nome}}\" class=\"r r-2x img-full\">\n\t\t\t</a>\n\t\t</div>\n\t\t<div class=\"padder-v\">\n\t\t\t<a href=\"#\" v-bind:title=\"episode.nome\" class=\"text-ellipsis\" alt=\"{{episode.nome}}\">{{episode.nome}}</a>\n\t\t\t<a href=\"#\" class=\"text-ellipsis text-xs text-muted\">{{episode.views | locale }} views</a>\n\t\t</div>\n\t</div>\n</div>\n\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -13573,11 +13573,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 
-var Episodio = require('./episode.vue');
+var Episode = require('./episode.vue');
 
 exports.default = {
   components: {
-    Episodio: Episodio
+    Episode: Episode
   },
 
   data: function data() {
@@ -13593,11 +13593,25 @@ exports.default = {
     'query_search': function query_search(data) {
       console.log(data.query);
       this.query = data.query;
+
+      var data = {
+        query: data.query
+      };
+
+      var self = this;
+
+      if (data.query == '') return;
+
+      $.post('/api/epi/search', data).done(function (data) {
+        if (data.status) self.$set('episodios', data.msg);
+      }).fail(function () {
+        alert('Error ao se conectar ao servidor');
+      });
     }
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <section class=\"scrollable padder-lg w-f-md\" id=\"bjax-target\">\n   <a href=\"#\" class=\"pull-right text-muted m-t-lg\" data-toggle=\"class:fa-spin\"><i class=\"icon-refresh i-lg  inline\" id=\"refresh\"></i></a>\n   <h2 class=\"font-thin m-b\">Resultados para {{query}}<span class=\"musicbar animate inline m-l-sm\" style=\"width:20px;height:20px\">\n    <span class=\"bar1 a1 bg-primary lter\"></span>\n    <span class=\"bar2 a2 bg-info lt\"></span>\n    <span class=\"bar3 a3 bg-success\"></span>\n    <span class=\"bar4 a4 bg-warning dk\"></span>\n    <span class=\"bar5 a5 bg-danger dker\"></span>\n  </span></h2>\n\n  <div class=\"row row-sm\">\n   <episode v-for=\"episodio in episodios\" :episode=\"episodio\"> </episode>\n  </div>\n</section>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <section class=\"scrollable padder-lg w-f-md\" id=\"bjax-target\">\n   <a href=\"#\" class=\"pull-right text-muted m-t-lg\" data-toggle=\"class:fa-spin\"><i class=\"icon-refresh i-lg  inline\" id=\"refresh\"></i></a>\n   <h2 class=\"font-thin m-b\">Resultados para {{query}}<span class=\"musicbar animate inline m-l-sm\" style=\"width:20px;height:20px\">\n    <span class=\"bar1 a1 bg-primary lter\"></span>\n    <span class=\"bar2 a2 bg-info lt\"></span>\n    <span class=\"bar3 a3 bg-success\"></span>\n    <span class=\"bar4 a4 bg-warning dk\"></span>\n    <span class=\"bar5 a5 bg-danger dker\"></span>\n  </span></h2>\n\n  <div class=\"row row-sm\">\n   <episode v-for=\"episodio of episodios\" :episode=\"episodio\"> </episode>\n  </div>\n</section>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -13630,12 +13644,8 @@ exports.default = {
 			var data = {
 				query: this.query
 			};
-
 			this.$parent.$broadcast('query_search', data);
-
 			this.$router.go('/search');
-
-			console.log(this.$parent);
 		}
 	}
 };

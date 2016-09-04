@@ -1,4 +1,5 @@
 module.exports = (app) =>{
+	app.post('/api/epi/search'                , app.controllers.episodioController.search); 
 	app.post('/api/epi/getEpisodesByPodcastId', app.controllers.episodioController.getEpisodesByPodcastId); 
 	app.post('/api/epi/getById'				  , app.controllers.episodioController.getById); 
 	app.post('/api/epi/view'                  , app.controllers.episodioController.view); 

@@ -195,6 +195,103 @@ Exemplo de saída:
 }
 ```
 
+### POST \api\epi\search
+Parâmetro:
+```js
+{
+    "query" : "hobbit"
+}
+```
+Exemplo de saída:
+```js
+{
+  "status": true,
+  "msg": [
+    {
+      "_id": "57cb5639e7e9d98c1a9db70d",
+      "nome": "NerdCast 127 - O Hobbit – Lá e de volta outra vez",
+      "vitrine": "https://jovemnerd.com.br/wp-content/themes/jovemnerd/assets/images/nc-feed.jpg",
+      "midia": "https://nerdcast.jovemnerd.com.br/nerdcast_127_hobbit.mp3",
+      "dataPub": "2008-09-12T08:46:55.000Z",
+      "__v": 0,
+      "views": 89228
+    },
+    {
+      "_id": "57cb5639e7e9d98c1a9db62e",
+      "nome": "NerdCast 343 - O Hobbit: Uma jornada esperada",
+      "vitrine": "https://jovemnerd.com.br/wp-content/themes/jovemnerd/assets/images/nc-feed.jpg",
+      "midia": "https://nerdcast.jovemnerd.com.br/nerdcast_343_hobbit_1.mp3",
+      "dataPub": "2012-12-28T06:42:11.000Z",
+      "__v": 0,
+      "views": 218
+    },
+    {
+      "_id": "57cb5639e7e9d98c1a9db5fa",
+      "nome": "NerdCast 394 - O Hobbit – A Desolação de Peter Jackson",
+      "vitrine": "https://jovemnerd.com.br/wp-content/themes/jovemnerd/assets/images/nc-feed.jpg",
+      "midia": "https://nerdcast.jovemnerd.com.br/nerdcast_394_hobbit_2.mp3",
+      "dataPub": "2013-12-20T08:17:08.000Z",
+      "__v": 0,
+      "views": 26634
+    },
+    {
+      "_id": "57cb5639e7e9d98c1a9db5c7",
+      "nome": "NerdCast 445 - O Hobbit – Redenção! Ou não…",
+      "vitrine": "https://jovemnerd.com.br/wp-content/themes/jovemnerd/assets/images/nc-feed.jpg",
+      "midia": "https://nerdcast.jovemnerd.com.br/nerdcast_445_hobbit_3.mp3",
+      "dataPub": "2014-12-19T08:26:41.000Z",
+      "__v": 0,
+      "views": 13124
+    },
+    {
+      "_id": "57cb9d8749d5e0a010ec5f5d",
+      "nome": "RapaduraCast 311 - O Hobbit: Uma Jornada Inesperada",
+      "vitrine": "http://cinemacomrapadura.com.br/imagens/2016/03/20160301-itunes-ccr2.jpg",
+      "midia": "http://media.blubrry.com/rapaduracast/www.seresrapadurianos.net/casts/rapaduracast_311-o-hobbit-uma-jornada-inesperada.mp3",
+      "dataPub": "2012-12-19T21:30:18.000Z",
+      "__v": 0,
+      "views": 0
+    },
+    {
+      "_id": "57cb9d8749d5e0a010ec6084",
+      "nome": "RapaduraCast 34 - Tolkien, O Hobbit, A Sociedade do Anel e As Duas Torres",
+      "vitrine": "http://cinemacomrapadura.com.br/imagens/2016/03/20160301-itunes-ccr2.jpg",
+      "midia": "http://seresrapadurianos.net/casts/rapaduracast_34_sda.mp3",
+      "dataPub": "2007-07-28T21:14:21.000Z",
+      "__v": 0,
+      "views": 0
+    },
+    {
+      "_id": "57cb9d8749d5e0a010ec5f2f",
+      "nome": "RapaduraCast 356 - O Hobbit - A Desolação de Smaug",
+      "vitrine": "http://cinemacomrapadura.com.br/imagens/2016/03/20160301-itunes-ccr2.jpg",
+      "midia": "http://media.blubrry.com/rapaduracast/www.seresrapadurianos.net/casts/rapaduracast_356-o-hobbit-2-smaug.mp3",
+      "dataPub": "2013-12-19T01:01:03.000Z",
+      "__v": 0,
+      "views": 0
+    },
+    {
+      "_id": "57cb9d8749d5e0a010ec5eff",
+      "nome": "RapaduraCast 403 - O Hobbit: A Batalha dos Cinco Exércitos",
+      "vitrine": "http://cinemacomrapadura.com.br/imagens/2016/03/20160301-itunes-ccr2.jpg",
+      "midia": "http://media.blubrry.com/rapaduracast/www.seresrapadurianos.net/casts/rapaduracast_403-o-hobbit-a-batalha-dos-cinco-exercitos.mp3",
+      "dataPub": "2014-12-18T12:01:03.000Z",
+      "__v": 0,
+      "views": 0
+    },
+    {
+      "_id": "57cb9d8749d5e0a010ec6076",
+      "nome": "RapaduraCast 48 - Tolkien | Parte 3: O Hobbit, Silmarillion e Contos Inacabados",
+      "vitrine": "http://cinemacomrapadura.com.br/imagens/2016/03/20160301-itunes-ccr2.jpg",
+      "midia": "http://seresrapadurianos.net/casts/rapaduracast_48_tolkien3.mp3",
+      "dataPub": "2007-11-01T21:14:21.000Z",
+      "__v": 0,
+      "views": 0
+    }
+  ]
+}
+```
+
 ### POST \api\epi\getListMostViewed
 Parâmetro:
 ```js
