@@ -2,6 +2,32 @@
 
 Documentação da api de uma pequena aplicação.
 
+## Usuario
+### POST \api\use\getInformation
+Parâmetro:
+```js
+Sem Parâmetro
+```
+Exemplo de saída:
+```js
+{
+   "status":true,
+   "msg":{
+      "id":"1020212734241897399",
+      "displayName":"Allysom Maciel Guimaraes",
+      "name":{
+
+      },
+      "provider":"facebook",
+      "_raw":"{\"name\":\"Allysom Maciel Guimaraes\",\"id\":\"1020212734241897399\"}",
+      "_json":{
+         "name":"Allysom Maciel Guimaraes",
+         "id":"1020212734241897399"
+      }
+   }
+}
+```
+
 ## Podcast
 ### POST \api\pod\new
 Parâmetro:

@@ -5,12 +5,17 @@ var session 	     = require('express-session');
 var bodyParser       = require('body-parser'); 
 var expressValidator = require('express-validator'); 
 var http             = require('http'); 
+var passport         = require('passport'); 
 var app 		     = express(); 
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
 app.use(expressValidator()); 
 app.use(session({secret : 'sometext', resave: true, saveUninitialized: true}));
+//app.use(cookieSession()); // Express cookie session middleware 
+app.use(passport.initialize());   // passport initialize middleware
+app.use(passport.session());   
 
 app.use(express.static(path.join(__dirname, '/public')));
 

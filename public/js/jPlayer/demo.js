@@ -16,7 +16,11 @@ $(document).ready(function(){
     supplied: "webmv, ogv, m4v, oga, mp3",
     smoothPlayBar: true,
     keyEnabled: true,
-    audioFullScreen: false
+    audioFullScreen: false, 
+
+    play: function(e){
+      console.log(e.status.media); 
+    }
   });
   
   $(document).on($.jPlayer.event.pause, myPlaylist.cssSelector.jPlayer,  function(){
@@ -25,8 +29,9 @@ $(document).ready(function(){
     $('.jp-play-me').parent('li').removeClass('active');
   });
 
-  $(document).on($.jPlayer.event.play, myPlaylist.cssSelector.jPlayer,  function(){
+  $(document).on($.jPlayer.event.play, myPlaylist.cssSelector.jPlayer,  function(e){
     $('.musicbar').addClass('animate');
+    console.log(e); 
   });
 
   $(document).on('click', '.jp-play-me', function(e){
@@ -51,17 +56,7 @@ $(document).ready(function(){
 
 
   // video
-
   $("#jplayer_1").jPlayer({
-    ready: function () {
-      $(this).jPlayer("setMedia", {
-        title: "Big Buck Bunny",
-        m4v: "http://flatfull.com/themes/assets/video/big_buck_bunny_trailer.m4v",
-        ogv: "http://flatfull.com/themes/assets/video/big_buck_bunny_trailer.ogv",
-        webmv: "http://flatfull.com/themes/assets/video/big_buck_bunny_trailer.webm",
-        poster: "images/m41.jpg"
-      });
-    },
     swfPath: "js",
     supplied: "webmv, ogv, m4v",
     size: {
@@ -71,7 +66,11 @@ $(document).ready(function(){
     },
     globalVolume: true,
     smoothPlayBar: true,
-    keyEnabled: true
+    keyEnabled: true, 
+
+    play: function(e){
+      console.log(e); 
+    }
   });
 
 });

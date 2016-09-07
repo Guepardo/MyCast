@@ -1,7 +1,27 @@
-//Rotas para usuário; 
-//Somente anexação de rotas com o devido controlador
+var passport = require('passport'); 
+
 module.exports = function(app){
-	app.get('/cadastrar', app.controllers.usuario.cadastrar); 
-	app.get('/alterar'  , app.controllers.usuario.alterar); 
-	app.get('/deletar'  , app.controllers.usuario.deletar); 
+	app.get('/auth/facebook', passport.authenticate('facebook')); 
+
+	app.get('/auth/facebook/callback',
+		passport.authenticate('facebook', { 
+			successRedirect : '/', 
+			failureRedirect: '/login' 
+		}),
+		function(req, res) {
+			res.redirect('/');
+		});
+
+	// app.get('/teste', function(req, res){
+	// 	// console.log(req); 
+	// 	res.json({id : req.user }); 
+	// }); 
+
+	// app.get('/logout', function(req, res){
+	// 	req.logout();
+	// 	res.redirect('/');
+	// });
+
+	app.get('/api/use/getInformation', app.controllers.usuarioController.getInformation); 
+
 }; 

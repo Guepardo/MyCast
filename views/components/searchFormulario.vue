@@ -1,3 +1,9 @@
+<!-- Estilos específicos para o componente ficam aqui -->
+<style>
+	
+</style>
+
+<!-- Estrutura HTML para o seu componente -->
 <template>
 	<form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
 		<div class="form-group">
@@ -11,16 +17,15 @@
 	</form>
 </template>
 
+<!-- Lógica do seu componente -->
 <script>
 	var Search = require('./search.vue'); 
-
 	export default{
 		data: () =>{
 			return {
 				query: ''
 			}; 
 		}, 
-
 		methods: {
 			onQuery: function(){
 				var data = {

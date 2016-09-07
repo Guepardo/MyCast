@@ -13623,6 +13623,8 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"./episode.vue":9,"vue":4,"vue-hot-reload-api":2}],13:[function(require,module,exports){
+var __vueify_insert__ = require("vueify/lib/insert-css")
+var __vueify_style__ = __vueify_insert__.insert("\n\n")
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13631,14 +13633,12 @@ Object.defineProperty(exports, "__esModule", {
 
 
 var Search = require('./search.vue');
-
 exports.default = {
 	data: function data() {
 		return {
 			query: ''
 		};
 	},
-
 	methods: {
 		onQuery: function onQuery() {
 			var data = {
@@ -13655,13 +13655,17 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
+  module.hot.dispose(function () {
+    __vueify_insert__.cache["\n\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
   if (!module.hot.data) {
     hotAPI.createRecord("_v-1db75c49", module.exports)
   } else {
     hotAPI.update("_v-1db75c49", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"./search.vue":12,"vue":4,"vue-hot-reload-api":2}],14:[function(require,module,exports){
+},{"./search.vue":12,"vue":4,"vue-hot-reload-api":2,"vueify/lib/insert-css":5}],14:[function(require,module,exports){
 // main.js
 var Vue       = require('vue')
 var VueRouter = require('vue-router'); 

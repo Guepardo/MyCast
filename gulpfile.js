@@ -1,7 +1,7 @@
-var fs = require("fs")
+var fs         = require("fs")
 var browserify = require('browserify')
-var vueify = require('vueify')
-var gulp   = require('gulp'); 
+var vueify     = require('vueify')
+var gulp       = require('gulp'); 
 
 // apply custom config
 vueify.compiler.applyConfig({
