@@ -22,6 +22,6 @@ module.exports = function(app){
 	// 	res.redirect('/');
 	// });
 
-	app.get('/api/use/getInformation', app.controllers.usuarioController.getInformation); 
+	app.post('/api/use/getInformation', app.controllers.usuarioController.getInformation); 
 
 }; 
