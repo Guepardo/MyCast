@@ -17,7 +17,7 @@
 			</section>
 
 			<footer class="footer footer-md bg-black">
-				<form class="" role="search">
+			<!-- 	<form class="" role="search"> -->
 					<div class="form-group clearfix m-b-none">
 						<div class="input-group m-t m-b">
 							<span class="input-group-btn">
@@ -26,7 +26,7 @@
 							<input 
 								type="text" 
 								class="form-control input-sm text-white bg-empty b-b b-dark no-border" 
-								v-model="comentario" 
+								v-model="texto" 
 								@focusOut="focusOut" 
 								@focus="onFocus" 
 								@keyup.enter="comentar"
@@ -35,7 +35,7 @@
 
 						</div>
 					</div>
-				</form>
+				<!-- </form> -->
 			</footer>
 
 		</section>              
@@ -50,7 +50,9 @@
 
 		data: () =>{
 			return {
-				comentario: ''
+				texto: '', 
+				tempo: '00:00', //deixar esse valor como padrão até recuperar direto do player.
+				episodio: '57cb5365de312fcc28c3bd3c'//deixar um valor default até pegar do player aqui.
 			}; 
 		}, 
 
@@ -64,8 +66,18 @@
 			},
 
 			comentar: function(){
-				alert(this.comentario);
-				this.comentario = '';
+				var data = {
+					tempo: this.tempo, 
+					texto: this.texto, 
+					episodio: this.episodio
+				}; 
+
+				$.post('/api/com/newcomment', data). 
+				done((data) =>{
+					alert(data); 
+					console.log(data); 
+					this.texto = ''; 
+				}); 
 			}
 		}
 	}

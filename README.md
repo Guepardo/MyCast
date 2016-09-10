@@ -28,6 +28,21 @@ Exemplo de saída:
 }
 ```
 
+## Comentários
+### POST \api\com\newComment
+Parâmetro:
+```js
+{
+    "tempo"    : "00:04", 
+    "texto"    : "Alguma coisa", 
+    "episodio" : "57cb4c4a961bd3a81d027bd7"
+}
+```
+Exemplo de saída:
+```js
+{status : true }
+```
+
 ## Podcast
 ### POST \api\pod\new
 Parâmetro:

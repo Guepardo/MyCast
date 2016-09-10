@@ -8,7 +8,7 @@
 <template>
 	<section class="vbox">
 		<header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
-			<div class="navbar-header aside bg-info nav-xs">
+			<div class="navbar-header aside bg-info">
 				<a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
 					<i class="icon-list"></i>
 				</a>
@@ -21,12 +21,12 @@
 					<i class="icon-settings"></i>
 				</a>
 			</div>      <ul class="nav navbar-nav hidden-xs">
-			<li>
+		<!-- 	<li>
 				<a href="#nav,.navbar-header" data-toggle="class:nav-xs,nav-xs" class="text-muted">
 					<i class="fa fa-indent text"></i>
 					<i class="fa fa-dedent text-active"></i>
 				</a>
-			</li>
+			</li> -->
 		</ul>
 		
 
@@ -71,7 +71,7 @@
 					</section>
 				</li>
 				<li class="dropdown">
-				<a class="btn btn-s-md btn-primary" data-toggle="modal" data-target="#adicionar-podcast" >Adicionar Podcast :)</a>
+				<a class="btn btn-s-md btn-primary" style="width: 250px;" data-toggle="modal" data-target="#adicionar-podcast" >Adicionar Podcast :)</a>
 
 				<!-- 	<a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
 						<span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
@@ -108,7 +108,7 @@
 	<section>
 		<section class="hbox stretch">
 			<!-- .aside -->
-			<aside class="bg-black dk nav-xs aside hidden-print" id="nav">          
+			<aside class="bg-black dk aside hidden-print" id="nav">          
 				<section class="vbox">
 					<section class="w-f-md scrollable">
 						<div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
@@ -171,6 +171,7 @@
 				<section class="hbox stretch">
 					<section>
 						<section class="vbox">
+						
 							<!-- Outlet SPA -->
 							<router-view> </router-view>
 							<!-- /Outlet SPA  -->
