@@ -71,8 +71,11 @@
 
 <script>
 	export default{
-		ready: function(){
-			
+		attached: function(){
+			Player.draw(); 
+			Player.onPlay(function(){
+				console.log('Todando'); 
+			});
 		}
 	}
 </script>

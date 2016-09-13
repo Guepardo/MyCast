@@ -15,9 +15,8 @@
 </section>
 </template>
 
-<script>
-
-var Episode = require('./episode.vue'); 
+<script> 
+import Episode from './episode.vue'; 
 
  export default {
  	components:{

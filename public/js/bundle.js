@@ -13333,20 +13333,35 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _comentarios = require('./comentarios.vue');
 
-var Comentarios = require('./comentarios.vue');
-var Player = require('./player.vue');
-var AdicionarPodcastModal = require('./adicionarPodcastModal.vue');
-var SearchFormulario = require('./searchFormulario.vue');
-var Setting = require('./setting.vue');
+var _comentarios2 = _interopRequireDefault(_comentarios);
+
+var _player = require('./player.vue');
+
+var _player2 = _interopRequireDefault(_player);
+
+var _adicionarPodcastModal = require('./adicionarPodcastModal.vue');
+
+var _adicionarPodcastModal2 = _interopRequireDefault(_adicionarPodcastModal);
+
+var _searchFormulario = require('./searchFormulario.vue');
+
+var _searchFormulario2 = _interopRequireDefault(_searchFormulario);
+
+var _setting = require('./setting.vue');
+
+var _setting2 = _interopRequireDefault(_setting);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
 	components: {
-		Comentarios: Comentarios,
-		Player: Player,
-		AdicionarPodcastModal: AdicionarPodcastModal,
-		SearchFormulario: SearchFormulario,
-		Setting: Setting
+		Player: _player2.default,
+		Comentarios: _comentarios2.default,
+		AdicionarPodcastModal: _adicionarPodcastModal2.default,
+		SearchFormulario: _searchFormulario2.default,
+		Setting: _setting2.default
 	},
 
 	replace: false,
@@ -13372,6 +13387,8 @@ exports.default = {
 		});
 	}
 };
+
+// var Comentarios           = require('./comentarios.vue');
 if (module.exports.__esModule) module.exports = module.exports.default
 ;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<section class=\"vbox\">\n\t\t<header class=\"bg-white-only header header-md navbar navbar-fixed-top-xs\">\n\t\t\t<div class=\"navbar-header aside bg-info\">\n\t\t\t\t<a class=\"btn btn-link visible-xs\" data-toggle=\"class:nav-off-screen,open\" data-target=\"#nav,html\">\n\t\t\t\t\t<i class=\"icon-list\"></i>\n\t\t\t\t</a>\n\t\t\t\t<a v-link=\"{path : '/'}\" class=\"navbar-brand text-lt\">\n\t\t\t\t\t<i class=\"icon-earphones\"></i>\n\t\t\t\t\t<img src=\"/images/logo.png\" alt=\".\" class=\"hide\">\n\t\t\t\t\t<span class=\"hidden-nav-xs m-l-sm\">MyCast</span>\n\t\t\t\t</a>\n\t\t\t\t<a class=\"btn btn-link visible-xs\" data-toggle=\"dropdown\" data-target=\".user\">\n\t\t\t\t\t<i class=\"icon-settings\"></i>\n\t\t\t\t</a>\n\t\t\t</div>      <ul class=\"nav navbar-nav hidden-xs\">\n\t\t<!-- \t<li>\n\t\t\t\t<a href=\"#nav,.navbar-header\" data-toggle=\"class:nav-xs,nav-xs\" class=\"text-muted\">\n\t\t\t\t\t<i class=\"fa fa-indent text\"></i>\n\t\t\t\t\t<i class=\"fa fa-dedent text-active\"></i>\n\t\t\t\t</a>\n\t\t\t</li> -->\n\t\t</ul>\n\t\t\n\n\t\t<!-- Formulário search -->\n\t\t<search-formulario> </search-formulario>\n\t\t<!-- Formulário search -->\n\n\t\t<div class=\"navbar-right \">\n\t\t\t<ul class=\"nav navbar-nav m-n hidden-xs nav-user user\">\n\t\t\t\t<li class=\"hidden-xs\">\n\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle lt\" data-toggle=\"dropdown\">\n\t\t\t\t\t\t<i class=\"icon-bell\"></i>\n\t\t\t\t\t\t<span class=\"badge badge-sm up bg-danger count\">2</span>\n\t\t\t\t\t</a>\n\t\t\t\t\t<section class=\"dropdown-menu aside-xl animated fadeInUp\">\n\t\t\t\t\t\t<section class=\"panel bg-white\">\n\t\t\t\t\t\t\t<div class=\"panel-heading b-light bg-light\">\n\t\t\t\t\t\t\t\t<strong>You have <span class=\"count\">2</span> notifications</strong>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"list-group list-group-alt\">\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"media list-group-item\">\n\t\t\t\t\t\t\t\t\t<span class=\"pull-left thumb-sm\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/images/a0.png\" alt=\"...\" class=\"img-circle\">\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"media-body block m-b-none\">\n\t\t\t\t\t\t\t\t\t\tUse awesome animate.css<br>\n\t\t\t\t\t\t\t\t\t\t<small class=\"text-muted\">10 minutes ago</small>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"media list-group-item\">\n\t\t\t\t\t\t\t\t\t<span class=\"media-body block m-b-none\">\n\t\t\t\t\t\t\t\t\t\t1.0 initial released<br>\n\t\t\t\t\t\t\t\t\t\t<small class=\"text-muted\">1 hour ago</small>\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"panel-footer text-sm\">\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"pull-right\"><i class=\"fa fa-cog\"></i></a>\n\t\t\t\t\t\t\t\t<a href=\"#notes\" data-toggle=\"class:show animated fadeInRight\">See all the notifications</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</section>\n\t\t\t\t\t</section>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"dropdown\">\n\t\t\t\t<a class=\"btn btn-s-md btn-primary\" style=\"width: 250px;\" data-toggle=\"modal\" data-target=\"#adicionar-podcast\">Adicionar Podcast :)</a>\n\n\t\t\t\t<!-- \t<a href=\"#\" class=\"dropdown-toggle bg clear\" data-toggle=\"dropdown\">\n\t\t\t\t\t\t<span class=\"thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm\">\n\t\t\t\t\t\t\t<img src=\"/images/a0.png\" alt=\"...\">\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\tJohn.Smith <b class=\"caret\"></b>\n\t\t\t\t\t</a>\n\t\t\t\t\t<ul class=\"dropdown-menu animated fadeInRight\">            \n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<span class=\"arrow top\"></span>\n\t\t\t\t\t\t\t<a href=\"#\">Settings</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a href=\"profile.html\">Profile</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a href=\"#\">\n\t\t\t\t\t\t\t\t<span class=\"badge bg-danger pull-right\">3</span>\n\t\t\t\t\t\t\t\tNotifications\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a href=\"docs.html\">Help</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a href=\"modal.lockme.html\" data-toggle=\"ajaxModal\" >Logout</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t</ul> -->\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</div>      \n\t</header>\n\t<section>\n\t\t<section class=\"hbox stretch\">\n\t\t\t<!-- .aside -->\n\t\t\t<aside class=\"bg-black dk aside hidden-print\" id=\"nav\">          \n\t\t\t\t<section class=\"vbox\">\n\t\t\t\t\t<section class=\"w-f-md scrollable\">\n\t\t\t\t\t\t<div class=\"slim-scroll\" data-height=\"auto\" data-disable-fade-out=\"true\" data-distance=\"0\" data-size=\"10px\" data-railopacity=\"0.2\">\n\n\n\n\t\t\t\t\t\t\t<!-- nav -->                 \n\t\t\t\t\t\t\t<nav class=\"nav-primary hidden-xs\">\n\t\t\t\t\t\t\t\t<ul class=\"nav bg clearfix\">\n\t\t\t\t\t\t\t\t\t<li class=\"hidden-nav-xs padder m-t m-b-sm text-xs text-muted\">\n\t\t\t\t\t\t\t\t\t\tDescobrir\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a v-link=\"{path : '/'}\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"icon-disc icon text-success\"></i>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"font-bold\">Novidades</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a v-link=\"{path : '/genero'}\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"icon-music-tone-alt icon text-info\"></i>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"font-bold\">Gêneros</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"events.html\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"icon-drawer icon text-primary-lter\"></i>\n\t\t\t\t\t\t\t\t\t\t\t<b class=\"badge bg-primary pull-right\">6</b>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"font-bold\">Eventos</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"listen.html\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"icon-list icon  text-info-dker\"></i>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"font-bold\">Ouvindo</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\n\t\t\t\t\t\t\t\t\t<!-- <li>\n\t\t\t\t\t\t\t\t\t\t<a href=\"video.html\" data-target=\"#content\" data-el=\"#bjax-el\" data-replace=\"true\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"icon-social-youtube icon  text-primary\"></i>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"font-bold\">Video</span>\n\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t<li class=\"m-b hidden-nav-xs\"></li> -->\n\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t</nav>\n\t\t\t\t\t\t\t<!-- / nav -->\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</section>\n\t\t\t\t\t\n\t\t\t\t\t<!-- Settings -->\n\t\t\t\t\t<setting> </setting>\n\t\t\t\t\t<!-- Settings -->\n\t\t\t\t</section>\n\t\t\t</aside>\n\t\t\t<!-- /.aside -->\n\n\t\t\t<section id=\"content\">\n\t\t\t\t<section class=\"hbox stretch\">\n\t\t\t\t\t<section>\n\t\t\t\t\t\t<section class=\"vbox\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t<!-- Outlet SPA -->\n\t\t\t\t\t\t\t<router-view> </router-view>\n\t\t\t\t\t\t\t<!-- /Outlet SPA  -->\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<!-- Player -->\n\t\t\t\t\t\t\t<player> </player>\n\t\t\t\t\t\t\t<!-- / Player -->\n\t\t\t\t\t\t</section>\n\t\t\t\t\t</section>\n\n\t\t\t\t\t<!-- Comentários -->\n\t\t\t\t\t<comentarios> </comentarios>\n\t\t\t\t\t<!-- / Comentários -->\n\t\t\t\t</section>\n\n\t\t\t\t<a href=\"#\" class=\"hide nav-off-screen-block\" data-toggle=\"class:nav-off-screen,open\" data-target=\"#nav,html\"></a>\n\t\t\t</section>\n\t\t</section>\n\t</section>    \n</section>\n\n<!-- Modal para aidcionar novo podcast -->\n\t<adicionar-podcast-modal>s </adicionar-podcast-modal> \n<!-- /Modal para aidcionar novo podcast -->\n"
 if (module.hot) {(function () {  module.hot.accept()
@@ -13453,14 +13470,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
 	props: ['episode'],
-
 	methods: {
 		play: function play() {
-			$('#jplayer_N').jPlayer("setMedia", {
+			Player.play({
 				mp3: this.episode.midia,
 				title: this.episode.nome,
 				_id: this.episode._id
-			}).jPlayer('play');
+			});
 
 			this.$dispatch('current_playing', this.episode._id);
 
@@ -13476,13 +13492,11 @@ exports.default = {
 		},
 
 		addToPlay: function addToPlay() {
-			myPlaylist.add({
+			Player.addList({
 				mp3: this.episode.midia,
 				title: this.episode.nome,
 				_id: this.episode._id
 			});
-
-			alert('Episódio ' + this.episode.nome + ' adicionado a lista de reprodução');
 		}
 	}
 };
@@ -13507,12 +13521,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _episode = require('./episode.vue');
 
-var episode = require('./episode.vue');
+var _episode2 = _interopRequireDefault(_episode);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   components: {
-    'episode': episode
+    Episode: _episode2.default
   },
 
   data: function data() {
@@ -13560,13 +13577,22 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"./episode.vue":9,"vue":4,"vue-hot-reload-api":2,"vueify/lib/insert-css":5}],11:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 exports.default = {
-	ready: function ready() {}
+	attached: function attached() {
+		Player.draw();
+		Player.onPlay(function () {
+			console.log('Todando');
+		});
+
+		$.post('/api/epi/getListMostViewed').done(function (data) {
+			Player.draw(data.msg);
+		});
+	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
 ;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<footer class=\"footer bg-dark\">\n\t<div id=\"jp_container_N\">\n\t\t<div class=\"jp-type-playlist\">\n\t\t\t<div id=\"jplayer_N\" class=\"jp-jplayer hide\"></div>\n\t\t\t<div class=\"jp-gui\">\n\t\t\t\t<div class=\"jp-video-play hide\">\n\t\t\t\t\t<a class=\"jp-video-play-icon\">play</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"jp-interface\">\n\t\t\t\t\t<div class=\"jp-controls\">\n\t\t\t\t\t\t<div><a class=\"jp-previous\"><i class=\"icon-control-rewind i-lg\"></i></a></div>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<a class=\"jp-play\"><i class=\"icon-control-play i-2x\"></i></a>\n\t\t\t\t\t\t\t<a class=\"jp-pause hid\"><i class=\"icon-control-pause i-2x\"></i></a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div><a class=\"jp-next\"><i class=\"icon-control-forward i-lg\"></i></a></div>\n\t\t\t\t\t\t<div class=\"hide\"><a class=\"jp-stop\"><i class=\"fa fa-stop\"></i></a></div>\n\t\t\t\t\t\t<div><a class=\"\" data-toggle=\"dropdown\" data-target=\"#playlist\"><i class=\"icon-list\"></i></a></div>\n\t\t\t\t\t\t<div class=\"jp-progress hidden-xs\">\n\t\t\t\t\t\t\t<div class=\"jp-seek-bar dk\">\n\t\t\t\t\t\t\t\t<div class=\"jp-play-bar bg-info\">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"jp-title text-lt\">\n\t\t\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t\t\t<li></li>\n\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"hidden-xs hidden-sm jp-current-time text-xs text-muted\"></div>\n\t\t\t\t\t\t<div class=\"hidden-xs hidden-sm jp-duration text-xs text-muted\"></div>\n\t\t\t\t\t\t<div class=\"hidden-xs hidden-sm\">\n\t\t\t\t\t\t\t<a class=\"jp-mute\" title=\"mute\"><i class=\"icon-volume-2\"></i></a>\n\t\t\t\t\t\t\t<a class=\"jp-unmute hid\" title=\"unmute\"><i class=\"icon-volume-off\"></i></a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"hidden-xs hidden-sm jp-volume\">\n\t\t\t\t\t\t\t<div class=\"jp-volume-bar dk\">\n\t\t\t\t\t\t\t\t<div class=\"jp-volume-bar-value lter\"></div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<a class=\"jp-shuffle\" title=\"shuffle\"><i class=\"icon-shuffle text-muted\"></i></a>\n\t\t\t\t\t\t\t<a class=\"jp-shuffle-off hid\" title=\"shuffle off\"><i class=\"icon-shuffle text-lt\"></i></a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<a class=\"jp-repeat\" title=\"repeat\"><i class=\"icon-loop text-muted\"></i></a>\n\t\t\t\t\t\t\t<a class=\"jp-repeat-off hid\" title=\"repeat off\"><i class=\"icon-loop text-lt\"></i></a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"hide\">\n\t\t\t\t\t\t\t<a class=\"jp-full-screen\" title=\"full screen\"><i class=\"fa fa-expand\"></i></a>\n\t\t\t\t\t\t\t<a class=\"jp-restore-screen\" title=\"restore screen\"><i class=\"fa fa-compress text-lt\"></i></a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"jp-playlist dropup\" id=\"playlist\">\n\t\t\t\t<ul class=\"dropdown-menu aside-xl dker\">\n\t\t\t\t\t<!-- The method Playlist.displayPlaylist() uses this unordered list -->\n\t\t\t\t\t<li class=\"list-group-item\"></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<div class=\"jp-no-solution hide\">\n\t\t\t\t<span>Update Required</span>\n\t\t\t\tTo play the media you will need to either update your browser to a recent version or update your <a href=\"http://get.adobe.com/flashplayer/\" target=\"_blank\">Flash plugin</a>.\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</footer>\n"
@@ -13587,12 +13613,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _episode = require('./episode.vue');
 
-var Episode = require('./episode.vue');
+var _episode2 = _interopRequireDefault(_episode);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   components: {
-    Episode: Episode
+    Episode: _episode2.default
   },
 
   data: function data() {
@@ -13645,9 +13674,6 @@ var __vueify_style__ = __vueify_insert__.insert("\n\n")
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-
-
-var Search = require('./search.vue');
 exports.default = {
 	data: function data() {
 		return {
@@ -13680,7 +13706,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-1db75c49", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"./search.vue":12,"vue":4,"vue-hot-reload-api":2,"vueify/lib/insert-css":5}],14:[function(require,module,exports){
+},{"vue":4,"vue-hot-reload-api":2,"vueify/lib/insert-css":5}],14:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("\n\n")
 'use strict';

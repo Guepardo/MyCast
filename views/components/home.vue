@@ -1,4 +1,3 @@
-// app.vue
 <style>
   .red {
     color: #f00;
@@ -49,12 +48,12 @@
 </section>
 </template>
 
-<script>
-var episode = require('./episode.vue'); 
+<script> 
+import Episode from './episode.vue'; 
 
 export default {
   components:{
-  	'episode': episode
+  	Episode
   }, 
   
   data: function(){

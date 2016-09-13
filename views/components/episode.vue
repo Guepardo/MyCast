@@ -41,14 +41,13 @@
 <script>
 	export default{
 		props:['episode'], 
-
 		methods:{
 			play: function(){
-				$('#jplayer_N').jPlayer("setMedia", {
+				Player.play( {
 					mp3  : this.episode.midia, 
 					title: this.episode.nome, 
 					_id  : this.episode._id
-				}).jPlayer('play'); 
+				}); 
 
 				this.$dispatch('current_playing', this.episode._id); 
 
@@ -65,13 +64,11 @@
 			}, 
 
 			addToPlay: function(){
-				myPlaylist.add({
+				Player.addList({
 					mp3: this.episode.midia, 
 					title: this.episode.nome, 
 					_id: this.episode._id
 				}); 
-
-				alert('Episódio '+this.episode.nome+' adicionado a lista de reprodução'); 
 			}
 		}
 	}

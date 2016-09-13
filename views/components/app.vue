@@ -199,16 +199,17 @@
 </template>
 
 <script>
-	var Comentarios           = require('./comentarios.vue'); 
-	var Player                = require('./player.vue'); 
-	var AdicionarPodcastModal = require('./adicionarPodcastModal.vue'); 
-	var SearchFormulario      = require('./searchFormulario.vue'); 
-	var Setting               = require('./setting.vue'); 
+	// var Comentarios           = require('./comentarios.vue'); 
+	import Comentarios           from './comentarios.vue'; 
+	import Player                from './player.vue'; 
+	import AdicionarPodcastModal from './adicionarPodcastModal.vue'; 
+	import SearchFormulario      from './searchFormulario.vue'; 
+	import Setting               from './setting.vue'; 
 
 	export default {
 		components:{
-			Comentarios, 
 			Player, 
+			Comentarios, 
 			AdicionarPodcastModal, 
 			SearchFormulario, 
 			Setting

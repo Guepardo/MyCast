@@ -1,8 +1,8 @@
-var myPlaylist; 
 
-$(document).ready(function(){
+PlayerProto = function(){}; 
 
-  myPlaylist = new jPlayerPlaylist({
+PlayerProto.prototype.draw = function(){
+   myPlaylist = new jPlayerPlaylist({
     jPlayer: "#jplayer_N",
     cssSelectorAncestor: "#jp_container_N"
   }, [
@@ -16,11 +16,7 @@ $(document).ready(function(){
     supplied: "webmv, ogv, m4v, oga, mp3",
     smoothPlayBar: true,
     keyEnabled: true,
-    audioFullScreen: false, 
-
-    play: function(e){
-      console.log(e.status.media); 
-    }
+    audioFullScreen: false
   });
   
   $(document).on($.jPlayer.event.pause, myPlaylist.cssSelector.jPlayer,  function(){
@@ -31,7 +27,6 @@ $(document).ready(function(){
 
   $(document).on($.jPlayer.event.play, myPlaylist.cssSelector.jPlayer,  function(e){
     $('.musicbar').addClass('animate');
-    console.log(e); 
   });
 
   $(document).on('click', '.jp-play-me', function(e){
@@ -54,7 +49,6 @@ $(document).ready(function(){
   });
 
 
-
   // video
   $("#jplayer_1").jPlayer({
     swfPath: "js",
@@ -66,11 +60,41 @@ $(document).ready(function(){
     },
     globalVolume: true,
     smoothPlayBar: true,
-    keyEnabled: true, 
-
-    play: function(e){
-      console.log(e); 
-    }
+    keyEnabled: true
   });
+}; 
 
-});
+
+PlayerProto.prototype.addList = function(item){
+  console.log("Adicionando mídia a playlist"); 
+  myPlaylist.add(item); 
+}; 
+
+
+PlayerProto.prototype.play = function(item){
+  if( typeof item != 'undefined')
+    $('#jplayer_N').jPlayer("setMedia",item).jPlayer('play'); 
+  else
+    $('#jplayer_N').jPlayer('play'); 
+}; 
+
+
+PlayerProto.prototype.onPlay = function(foo){
+    $(document).off().on($.jPlayer.event.play, myPlaylist.cssSelector.jPlayer,  function(e){
+    $('.musicbar').addClass('animate');
+    foo(e); 
+  });
+}; 
+
+
+PlayerProto.prototype.onPause = function(foo){
+  $(document).on($.jPlayer.event.pause, myPlaylist.cssSelector.jPlayer,  function(){
+    $('.musicbar').removeClass('animate');
+    $('.jp-play-me').removeClass('active');
+    $('.jp-play-me').parent('li').removeClass('active');
+    foo(e); 
+  });
+}; 
+
+
+window.Player = new PlayerProto(); 

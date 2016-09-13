@@ -19,7 +19,6 @@
 
 <!-- Lógica do seu componente -->
 <script>
-	var Search = require('./search.vue'); 
 	export default{
 		data: () =>{
 			return {
